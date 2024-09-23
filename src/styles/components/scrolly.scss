@@ -1,0 +1,90 @@
+/* ==========================================================================
+   scrolly / component
+   ========================================================================== */
+.has-js {
+    [data-scrolly='fromBigSmall'] {
+        opacity: 0;
+        transform: scale(2);
+        transition: all 1s ease-out;
+        &.is-active {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+   
+    [data-scrolly='fromBottom'] {
+        opacity: 0;
+        transform: translateY(60px);
+        transition: all 0.4s ease-out;
+        &.is-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    /*[data-scrolly='fromLeft'] {
+        opacity: 0;
+        transform: translateX(-160px);
+        @media screen and (max-width: $breakpoint-md){
+            transform: translateX(-80px);
+        }
+        transition: all 1.4s ease-out;
+        &.is-active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }*/
+    [data-scrolly='fromTop'] {
+        opacity: 0;
+        transform: translateY(-160px);
+        transition: all 0.4s ease-out;
+        &.is-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    [data-scrolly='fromRight'] {
+        opacity: 0;
+        transform: translateX(160px);
+        transition: all 1.4s ease-out;
+        @media screen and (max-width: $breakpoint-md){
+            transform: translateX(80px);
+        }
+        &.is-active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    [data-scrolly='flipFromBottom'] {
+        opacity: 0;
+        transform: rotateX(70deg);
+        transition: all 1.2s ease-out;
+        &.is-active {
+            opacity: 1;
+            transform: rotateX(0deg);
+        }
+    }
+
+/*
+fait par mes soignes
+*/
+
+    [data-scrolly='fromRotateSmallBig'] {
+        opacity: 0;
+        transform: rotate(270deg) scale(0.1);
+        transition: all 1s ease-out;
+        &.is-active {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+    }
+        [data-scrolly='fromRotationBigSmall'] {
+            opacity: 0;
+            transform: rotate(70deg) scale(2,0);
+            transition: all 0.6s ease-out;
+            &.is-active {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+        }
+    
+}

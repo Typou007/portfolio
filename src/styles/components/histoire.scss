@@ -1,0 +1,123 @@
+.histoire {
+    background-color: var(--color-bg-primary);
+}
+
+.histoire-containe {
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+    div {
+        margin-bottom: 50px;
+    }
+
+    .history {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap-reverse; /* Inverse l'ordre des éléments en dessous de la largeur de l'écran définie par la media query */
+        align-items: center; /* Centre verticalement les éléments */
+        justify-content: space-between; /* Espace les éléments horizontalement */
+        @media screen and (max-width: 1250px) {
+            flex-direction: column;
+        }
+        img {
+            max-width: 100%; /* L'image s'ajustera à la taille du conteneur */
+            height: auto;
+            margin-bottom: 20px; /* Marge en bas pour l'espacement */
+        }
+
+        div {
+            position: absolute;
+            border-radius: 30px;
+            background-color: var(--color-white);
+            padding: 5%;
+            max-width: 40%;
+            z-index: 1;
+            @media screen and (max-width: 1250px) {
+                position: relative;
+                max-width: 100%;
+            }
+
+            h3 {
+                font-family: var(--font-primairy);
+                color: var(--color-secondary);
+                margin: 0;
+            }
+
+            h2 {
+                font-family: var(--font-secondary);
+                font-weight: bolder;
+                font-size: var(font-size-h2);
+                margin-top: 0;
+            }
+
+            p {
+                font-family: var(--font-secondary);
+                color: var(--color-primary);
+            }
+        }
+
+        .text-on-image {
+            right: 10%; /* Ajuster selon vos besoins */
+            align-self: center; /* Ajuster selon vos besoins */
+
+            @media screen and (max-width: 1250px) {
+                right: 0; /* Ajuster selon vos besoins */
+            }
+        }
+    }
+    .mission {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap-reverse; /* Inverse l'ordre des éléments en dessous de la largeur de l'écran définie par la media query */
+        align-items: center; /* Centre verticalement les éléments */
+        justify-content: flex-end;
+        @media screen and (max-width: 1250px) {
+            flex-direction: column-reverse;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px; /* Marge en bas pour l'espacement */
+        }
+
+        div {
+            position: absolute;
+            border-radius: 30px;
+            background-color: var(--color-white);
+            padding: 5%;
+            max-width: 41%;
+            z-index: 1;
+            @media screen and (max-width: 1250px) {
+                position: relative;
+                max-width: 100%;
+            }
+
+            h3 {
+                font-family: var(--font-primairy);
+                color: var(--color-secondary);
+                margin: 0;
+            }
+
+            h2 {
+                font-family: var(--font-secondary);
+                font-size: var(font-size-h2);
+                font-weight: bolder;
+                margin-top: 0;
+            }
+
+            p {
+                font-family: var(--font-secondary);
+                color: var(--color-primary);
+            }
+        }
+
+        .text-on-image-reverse {
+            right: 50%;
+            align-self: center;
+
+            @media screen and (max-width: 1250px) {
+                right: 0;
+            }
+        }
+    }
+}

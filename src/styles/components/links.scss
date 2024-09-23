@@ -1,0 +1,86 @@
+/*
+   Vos CSS pour l'exercice #1
+   ========================================================================== */
+
+
+
+   .link-item--underline {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+.link-item--underline:hover::after {
+    transform: translateY(0);
+
+}
+.link-item--underline::after {
+    background-color: var(--color-secondary);
+    content: '';
+    position: absolute;
+    transition: transform 0.3s ease-out;
+    height: 4px;
+    width: 100%;
+    display: block;
+    bottom: 0;
+    left: 0;
+
+    transform: translateY(100%);
+
+    @media screen and (max-width: $breakpoint-md) {
+        transition: transform 0.6s ease-out;
+    }
+}
+
+
+
+
+
+
+
+.link-item--bg {
+    position: relative;
+    display: inline-block;
+    padding: 4px;
+}
+.link-item--bg:hover {
+    color: white;
+}
+.link-item--bg:hover::before {
+    transform: scaleY(100%);
+    transition: transform 0.3s ease-out;
+}
+.link-item--bg::before {
+    background-color: var(--color-primary);
+
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    transform: scaleY(0);
+    transition: transform 0.3s ease-out;
+}
+
+/*
+3
+*/
+
+.link-item--underline-side::after {
+    transform: scaleX(0); /* Ligne invisible par défaut */
+}
+.link-item--underline-side:hover::after {
+    transform: scaleX(1); /* Ligne visible au survol */
+}
+
+.link-item--underline-reverse::after {
+    transform: scaleX(0); /* Ligne invisible par défaut */
+    transform-origin: left; /* Animation commence de la gauche */
+}
+.link-item--underline-reverse:hover::after {
+    transform: scaleX(1); /* Ligne visible au survol */
+    transform-origin: right; /* Animation commence de la droite */
+}

@@ -1,0 +1,77 @@
+.hero {
+    position: relative;
+}
+.hero_info {
+    position: absolute;
+    top: 50%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Pour être au-dessus des images */
+    color: white; /* Par exemple, pour un meilleur contraste avec les images */
+
+    h1 {
+        font-family: var(--font-third);
+    }
+}
+.img_hero {
+    width: 100%;
+    min-width: 100vh;
+}
+.contact_img {
+    width: 100%;
+    min-width: 320px;
+    max-height: 570px;
+    min-height: 200px;
+}
+.contact_h3 {
+    color: var(--color-secondary) !important;
+}
+
+.hero_info h3,
+.hero_info h1,
+.hero_info {
+    margin-bottom: 20px; /* Ajoutez une marge pour un meilleur espacement */
+    color: var(--color-white);
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-secondary);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: var(--font-size-a);
+        font-family: var(--font-secondary);
+
+        svg {
+            color: var(--color-white);
+            width: 20px;
+            height: 20px;
+            background-color: var(--color-primary);
+            border-radius: 100%;
+            padding: 6px;
+        }
+    }
+}
+
+.button:hover {
+    background-color: var(
+        --color-primary
+    ); /* Changement de couleur au survol */
+    color: var(--color-white);
+    a {
+        svg {
+            background-color: var(--color-secondary);
+        }
+    }
+}
+
+.button_icon {
+    margin-left: 5px;
+}

@@ -1,0 +1,58 @@
+.tourisme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    background-color: var(--color-bg-secondary);
+
+    h3 {
+        color: var(--color-secondary);
+        font-size: var(--font-size-h3);
+        margin: 0;
+    }
+    h2 {
+        color: var(--color-primary);
+    }
+    .offre {
+        display: flex;
+        margin-bottom: 50px;
+
+        @media screen and (max-width: 800px) {
+            flex-direction: column;
+        }
+
+        .produit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 10px;
+            margin-left: 10px;
+            overflow: hidden;
+            h5 {
+                font-size: var(--font-size-h5);
+                font-family: var(--font-secondary);
+                font-weight: bolder;
+                margin: 0;
+                margin-top: 24px;
+            }
+            div {
+                overflow: hidden;
+                width: 100%; /* Largeur du conteneur */
+                max-height: 320px; /* Hauteur du conteneur */
+                position: relative; /* Nécessaire pour que l'image occupe tout l'espace */
+            }
+            img {
+                transition: 0.3s $ease-out-expo;
+                width: 100%; /* L'image occupe toute la largeur du conteneur */
+                height: 100%; /* L'image occupe toute la hauteur du conteneur */
+                object-fit: cover; /* L'image est rognée pour couvrir tout le conteneur */
+            }
+            img:hover {
+                transform: scale(1.1);
+                transition: 0.3s $ease-out-expo;
+            }
+        }
+    }
+}

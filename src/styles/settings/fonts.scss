@@ -1,0 +1,22 @@
+/* ==========================================================================
+   FONTS / SETTINGS
+   ========================================================================== */
+/// Font family
+:root {
+    --font-primary: 'Yellowtail', sans-serif;
+    --font-secondary: 'Roboto', monospace;
+    --font-third: 'Lexend', sans-serif;
+
+    --font-size-content: #{typo(16px, 18px)};
+
+    /// Grosseur des textes
+    --font-size-h1: #{typo(26px, 64px)};
+    --font-size-h2: #{typo(22px, 50px)};
+    --font-size-h3: #{typo(20px, 36px)};
+    --font-size-h4: #{typo(18px, 30px)};
+    --font-size-h5: #{typo(16px, 28px)};
+
+    --font-size-s: #{typo(14px, 22px)};
+    --font-size-a: #{typo(14px, 20px)};
+    --font-size-p: #{typo(12px, 18px)};
+}

@@ -1,0 +1,53 @@
+//FONTS
+// ici sont chargé les fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+// TOOLS
+// mixins et fonctions utilisés globalement dans le SCSS (Sass)
+@import 'tools/typo';
+@import 'tools/cover';
+
+// SETTINGS
+// Contient les variables sur les polices, les définitions de couleurs, les définitions de  grandeurs,   etc.
+@import 'settings/colors';
+@import 'settings/fonts';
+@import 'settings/dimensions';
+@import 'settings/easing';
+
+// GENERIC
+// Permet de réinitialiser les CSS et de changer le modèle de boîte en box-sizing: border-box
+@import 'generic/normalize';
+@import 'generic/reset';
+
+// ELEMENTS
+// Modification des styles généraux de la page. Ce sont les styles qui seront généralement hérités par les éléments de la page.
+@import 'elements/body';
+@import 'elements/headings';
+@import 'elements/links';
+@import 'elements/wrapper';
+
+// COMPONENTS
+// Composants d'interface utilisateur spécifiques.
+// C’est là que la majorité de notre travail a lieu.
+@import 'components/icons';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/carousel';
+@import 'components/links';
+@import 'components/hero';
+@import 'components/actualites';
+@import 'components/histoire';
+@import 'components/tourisme';
+@import 'components/rejoindre';
+@import 'components/video';
+@import 'components/scrolly';
+@import 'components/question';
+@import 'components/form.scss';
+@import 'components/button.scss';
+@import 'components/backgrid.scss';
+
+// UTILITIES
+// Utilitaires et classes auxiliaires avec possibilité de remplacer tout ce qui précède, par exemple masquer les éléments de la page
+
+@import '../../node_modules/swiper/swiper-bundle';

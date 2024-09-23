@@ -1,0 +1,77 @@
+/* ==========================================================================
+   video / component
+   ========================================================================== */
+
+.youtube {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    .icon {
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-shadow: 0 0 4px rgba(0, 0, 0, 1);
+        
+        transition-property: opacity, transform;
+        transform-origin: 0 0;
+        transform: translate(-50%, -50%);
+        transform: rotateX(180'angle') ;
+        z-index: 2;
+        rotate: 180deg;
+        transition: 0.4s all $ease-out-expo;
+        
+
+        .is-youtube-ready & {
+            opacity: 1;
+        }
+    }
+
+    &:hover .icon {
+        transform: scale(0.8) translate(-50%, -50%);
+        rotate: 0deg;
+        transition: 0.4s all $ease-out-expo;
+    }
+}
+.contenu{
+    max-width: 1440px;
+    margin: 100px auto;
+}
+.video_presentation{
+    text-align: center;
+
+    h3{
+        font-family: var(--font-primary);
+        font-size: var(--font-size-h3);
+        color: var(--color-secondary);
+    }
+    h2{
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-h2);
+        color: var(--color-primary);
+    }
+}
+.grid-2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+    gap: 20px;
+    
+    @media screen and (max-width: 800px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.youtube__media {
+    @include cover();
+}
