@@ -29,70 +29,80 @@ export default class Scrolly {
      */
     const gridContainer = document.querySelector('.grid-container');
 
-// Fonction pour générer la grille dynamiquement selon la taille de la fenêtre
-function createGrid() {
-  const containerWidth = window.innerWidth;
-  const containerHeight = window.innerHeight;
-  const squareSize = 35; // Taille d'un carré en pixels
-  const numColumns = Math.floor(containerWidth / squareSize);
-  const numRows = Math.floor(containerHeight / squareSize);
-
-  gridContainer.style.gridTemplateColumns = `repeat(${numColumns}, 1fr)`;
-  gridContainer.style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
-
-  for (let i = 0; i < numColumns * numRows; i++) {
-      const gridItem = document.createElement('div');
-      gridItem.classList.add('grid-item');
-      gridContainer.appendChild(gridItem);
-  }
-}
-
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function changeSurroundingColors(index, columns) {
-  const items = document.querySelectorAll('.grid-item');
-  const positions = [
-      -columns - 1, -columns, -columns + 1,  // Carrés du dessus
-      -1, 1,                                // Carrés sur les côtés
-      columns - 1, columns, columns + 1     // Carrés du dessous
-  ];
-
-  for (let i = 0; i < 5; i++) {
-      const randomPosition = getRandomInt(0, positions.length - 1);
-      const neighborIndex = index + positions[randomPosition];
-
-      if (neighborIndex >= 0 && neighborIndex < items.length) {
-          const item = items[neighborIndex];
-          item.style.borderColor = '#C6FF00'; // Change la couleur de la bordure
-          
+    function createGrid() {
+      const containerWidth = window.innerWidth;
+      const containerHeight = window.innerHeight;
+      const squareSize = 35; // Taille d'un carré
+      const numColumns = Math.floor(containerWidth / squareSize);
+      const numRows = Math.floor(containerHeight / squareSize);
+    
+      gridContainer.style.gridTemplateColumns = `repeat(${numColumns}, 1fr)`;
+      gridContainer.style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
+    
+      gridContainer.innerHTML = ''; // Réinitialise la grille
+    
+      for (let i = 0; i < numColumns * numRows; i++) {
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item');
+        gridContainer.appendChild(gridItem);
       }
-  }
-}
-
-gridContainer.addEventListener('mouseover', (event) => {
-  if (event.target.classList.contains('grid-item')) {
-      const items = Array.from(document.querySelectorAll('.grid-item'));
-      const index = items.indexOf(event.target);
-      const numColumns = Math.floor(window.innerWidth / 35);
-
-      // Réinitialiser les couleurs de la bordure
-      items.forEach(item => {
+    }
+    
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    
+    // Fonction pour changer la couleur des voisins
+    function changeSurroundingColors(index, columns) {
+      const items = document.querySelectorAll('.grid-item');
+      
+      // Positions autour de l'élément actuel (gauche, droite, haut, bas et diagonales)
+      const positions = [
+        -columns - 1, -columns, -columns + 1,  // Carrés du dessus
+        -1, 1,                                // Carrés sur les côtés
+        columns - 1, columns, columns + 1     // Carrés du dessous
+      ];
+    
+      // Parcourt les positions autour de l'élément
+      positions.forEach((position) => {
+        const neighborIndex = index + position;
+    
+        // Vérifie si l'index du voisin est valide
+        if (neighborIndex >= 0 && neighborIndex < items.length) {
+          const item = items[neighborIndex];
+          
+          // Change la couleur de la bordure du voisin
+          item.style.borderColor = '#C6FF00'; // Couleur de bordure lorsque survolé
+        }
+      });
+    }
+    
+    // Gestion du survol des éléments de la grille
+    gridContainer.addEventListener('mouseover', (event) => {
+      if (event.target.classList.contains('grid-item')) {
+        const items = Array.from(document.querySelectorAll('.grid-item'));
+        const index = items.indexOf(event.target);
+        const numColumns = Math.floor(window.innerWidth / 35);
+    
+        // Réinitialiser les couleurs de la bordure
+        items.forEach(item => {
           item.style.borderColor = '#444'; // Réinitialise la bordure
           item.style.opacity = 1; // Réinitialise l'opacité
-      });
+        });
+    
+        // Change les couleurs autour de l'élément survolé
+        changeSurroundingColors(index, numColumns);
+      }
+    });
+    
+    // Génère la grille initiale
+    createGrid();
+    
+    // Gère la régénération de la grille lors du redimensionnement
+    window.addEventListener('resize', createGrid);
+    
 
-      changeSurroundingColors(index, numColumns);
-  }
-});
-
-createGrid();
-
-window.addEventListener('resize', () => {
-  gridContainer.innerHTML = ''; // Vide la grille
-  createGrid(); // Recrée la grille avec la nouvelle taille
-});
+    
 
     /**
      * temporaire
