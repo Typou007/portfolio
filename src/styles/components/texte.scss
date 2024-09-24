@@ -1,0 +1,53 @@
+h1{
+    color: var(--color-primary);
+    font-size: var(--font-size-h1);
+    font-family: var(--font-primary);
+    font-style: normal;
+    font-weight: bold;
+    line-height: 105.469%;;
+    text-transform: uppercase;
+}
+h2{
+    color: var(--color-secondary); 
+    font-size: var(--font-size-h2); 
+    font-family: var(--font-secondary);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 9.75px;
+    
+}
+h3{
+    color: #C6FF00;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-h3);
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+h4{
+    color: var(--color-primary);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-h4);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 5.25px;
+    text-transform: uppercase;
+}
+p{
+    font-family: var(--font-third);
+    font-size: var(--font-size-p);
+    color: var(--color-secondary);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 193%;
+}
+.btn{
+    text-align: center;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-a);
+    font-style: normal;
+    font-weight: bolder;
+    line-height: normal;
+}

@@ -3,20 +3,19 @@
    ========================================================================== */
 /// Font family
 :root {
-    --font-primary: 'Yellowtail', sans-serif;
-    --font-secondary: 'Roboto', monospace;
-    --font-third: 'Lexend', sans-serif;
+    --font-primary: 'orbitron', sans-serif;
+    --font-secondary: 'Karla', monospace;
+    --font-third: 'Rajdhani', sans-serif;
 
     --font-size-content: #{typo(16px, 18px)};
 
     /// Grosseur des textes
-    --font-size-h1: #{typo(26px, 64px)};
-    --font-size-h2: #{typo(22px, 50px)};
-    --font-size-h3: #{typo(20px, 36px)};
-    --font-size-h4: #{typo(18px, 30px)};
-    --font-size-h5: #{typo(16px, 28px)};
+    --font-size-h1: #{typo(30px, 78px)}; //bold // orbitron
+    --font-size-h2: #{typo(28px, 65px)}; //regular // karla
+    --font-size-h3: #{typo(26px, 35px)}; // bold    // karla
+    --font-size-h4: #{typo(30px, 35px)}; // regular // orbitron
 
-    --font-size-s: #{typo(14px, 22px)};
-    --font-size-a: #{typo(14px, 20px)};
-    --font-size-p: #{typo(12px, 18px)};
+    --font-size-a: #{typo(30px, 35px)};
+    --font-size-p: #{typo(18px, 20px)};
+
 }
