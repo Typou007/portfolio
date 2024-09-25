@@ -1,21 +1,11 @@
 .hero {
     position: relative;
 }
-.hero_info {
-    position: absolute;
-    top: 50%;
-    left: 38%;
-    transform: translate(-50%, -50%);
-    z-index: 2; /* Pour être au-dessus des images */
-    color: white; /* Par exemple, pour un meilleur contraste avec les images */
 
-    h1 {
-        font-family: var(--font-third);
-    }
-}
 .img_hero {
     width: 100%;
     min-width: 100vh;
+    position: relative;
 }
 .contact_img {
     width: 100%;
@@ -23,55 +13,36 @@
     max-height: 570px;
     min-height: 200px;
 }
-.contact_h3 {
-    color: var(--color-secondary) !important;
-}
-
-.hero_info h3,
-.hero_info h1,
-.hero_info {
-    margin-bottom: 20px; /* Ajoutez une marge pour un meilleur espacement */
-    color: var(--color-white);
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--color-secondary);
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    a {
-        color: white;
-        text-decoration: none;
-        font-size: var(--font-size-a);
-        font-family: var(--font-secondary);
-
-        svg {
-            color: var(--color-white);
-            width: 20px;
-            height: 20px;
-            background-color: var(--color-primary);
-            border-radius: 100%;
-            padding: 6px;
-        }
+.hero_content{
+    position: absolute;
+    bottom: 10%;
+    
+    
+    width: 100%; /* Use full width of the parent */
+    max-width: 900px; /* Set a maximum width to prevent it from exceeding the SVG size */
+    height: auto; /* Allow height to adjust based on the width */
+    @media screen and (min-width: 945px) {
+        right: 5%;
     }
 }
-
-.button:hover {
-    background-color: var(
-        --color-primary
-    ); /* Changement de couleur au survol */
-    color: var(--color-white);
-    a {
-        svg {
-            background-color: var(--color-secondary);
-        }
-    }
+.hero-svg-container{
+    position: relative; /* Position relative for text positioning */
+    width: 100%; /* Make it responsive */
+    height: auto; /* Allow it to adjust based on the aspect ratio of the SVG */
+    overflow: hidden; /* Ensure no overflow */
 }
-
-.button_icon {
-    margin-left: 5px;
+.text-overlay {
+    position: absolute; /* Absolute positioning to overlay the text */
+    top: 60%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    color:var(--color-bg-secondary); /* Change text color for visibility */
+    width: 100%;
+}
+.text-overlay-top {
+    position: absolute; /* Absolute positioning to overlay the text */
+    top: -6%; /* Center vertically */
+    left: 67%; /* Center horizontally */
+    text-align: center; /* Center text */
+    color: var(--color-bg-secondary);
 }

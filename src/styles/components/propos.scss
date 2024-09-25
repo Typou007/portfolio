@@ -1,0 +1,137 @@
+/*
+titre
+*/
+.title {
+    position: relative;
+    width: 100%; 
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.titre-svg-container{
+
+    position: relative; 
+    width: 100%; 
+    padding-top: 36.89%; /* Aspect ratio to maintain the height based on the original SVG (332 / 900 * 100) */
+    height: 0; 
+    overflow: hidden; 
+    svg{
+        position: absolute; /* Absolute to fill the container */
+        top: 0;
+        left: 0;
+        width: 100%; /* Full width of the parent container */
+        height: 100%; /* Adjust height automatically based on width */
+    }
+}
+
+.title-overlay {
+    position: absolute; /* Position overlay absolutely in relation to its container */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to make it perfectly centered */
+    color: white; /* Change color for visibility */
+    font-size: 2vw; /* Responsive font size */
+    text-align: center; /* Center the text */
+    pointer-events: none; /* Disable interaction with the text */
+}
+/*
+grid
+*/
+.propos-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+/*
+présentation
+*/
+.presentation {
+    position: relative;
+    width: 100%;
+    margin: 0 10px;
+    grid-column: span 4;  /* Prendre 4 colonnes */
+
+.presentation-container {
+    width: 100%;
+    height: 100%;  /* Assurez-vous que le conteneur prend toute la hauteur disponible */
+    overflow: hidden;
+
+    svg {
+        top: 0;
+        left: 0;
+        width: 100%;  /* Prendre toute la largeur du conteneur */
+        height: 100%;  /* Prendre toute la hauteur également */
+        object-fit: cover;  /* S'adapter au conteneur sans déformation */
+
+    }
+    path{
+        width: 100%;  /* Prendre toute la largeur du conteneur */
+        height: 100%;  /* Prendre toute la hauteur également */
+    }
+    }
+.presentation-titrage{
+    position: absolute; /* Position overlay absolutely in relation to its container */
+    top: 6%;
+    left: 17%;
+    transform: translate(-50%, -50%); /* Adjust to make it perfectly centered */
+    color: white; /* Change color for visibility */
+    text-align: left; /* Center the text */
+    pointer-events: none; /* Disable interaction with the text */
+    }
+.presentation-overlay{
+    position: absolute;
+    top: 50%;  /* Centrer verticalement */
+    left: 50%;  /* Centrer horizontalement */
+    transform: translate(-50%, -50%);
+    color: white;
+    pointer-events: none;
+    text-align: left;
+    width: 90%;  /* Ajuster la largeur de l'overlay */
+    }
+}
+/*
+img
+*/
+.img{
+    display: flex;
+    grid-column: span 2;
+    margin: 0 10px;
+    div{
+        max-width: 462px;
+        width: 100%;
+        max-height: 650px;
+        height: auto;
+
+      img{
+        max-width: 462px;
+        width: 100%;
+        max-height: 650px;
+        height: auto;
+        border: 1px red solid;
+        object-fit:cover;
+    }  
+    }  
+}
+/*
+loisir
+*/
+.loisir{
+    width: 100%;
+    margin: 0 10px;
+    grid-column: span 3;  /* Prendre 3 colonnes */
+}
+.offre{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.produit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*
+expertice
+*/

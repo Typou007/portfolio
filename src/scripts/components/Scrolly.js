@@ -86,7 +86,7 @@ export default class Scrolly {
     
         // Réinitialiser les couleurs de la bordure
         items.forEach(item => {
-          item.style.borderColor = '#444'; // Réinitialise la bordure
+          item.style.borderColor = '#312f2f'; // Réinitialise la bordure
           item.style.opacity = 1; // Réinitialise l'opacité
         });
     
