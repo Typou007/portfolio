@@ -52,9 +52,7 @@
         border-bottom: 1px solid var(--color-secondary);
     }
     @media screen and (max-width: 400px) {
-        
         width: 0;
-    
     }
 }
 .footer_info3::before {
@@ -74,9 +72,7 @@
         border-top: 1px solid var(--color-secondary);
     }
     @media screen and (max-width: 400px) {
-        
         width: 0;
-    
     }
 }
 
@@ -98,11 +94,10 @@
             color: var(--color-secondary);
         }
     }
-    .footer__brand:hover{
-        
-            h3{
-             color: var(--color-primary);
-            }        
+    .footer__brand:hover {
+        h3 {
+            color: var(--color-primary);
+        }
     }
     p {
         font-family: var(--font-secondary);
@@ -138,7 +133,7 @@
             width: 40px;
             height: 40px;
             display: block;
-            z-index: -1;
+            z-index: 0;
             bottom: -50%;
             left: -50%;
             transform: scale(1);

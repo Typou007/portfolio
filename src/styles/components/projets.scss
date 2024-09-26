@@ -1,0 +1,93 @@
+.projets {
+    position: relative;
+}
+
+.projet {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    color: white;
+    position: sticky;
+    top: 10%; /* Décalage de 10% vers le bas */
+    width: 100%;
+    transition: transform 0.5s ease-out;
+    margin-top: -10vh; /* Remplace le haut de la projet pour qu'elle "touche" le haut */
+}
+
+.projet::before {
+    content: attr(id);
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    pointer-events: none;
+    left: 20px;
+    top: 20px;
+    z-index: 1;
+}
+
+/* Styles spécifiques pour chaque projet */
+#projet1::before {
+    top: -10%;
+    left: 0;
+}
+#projet2::before {
+    top: -10%;
+    left: 20%;
+}
+#projet3::before {
+    top: -10%;
+    left: 40%;
+}
+#projet4::before {
+    top: -10%;
+    left: 60%;
+}
+#projet5::before {
+    top: -10%;
+    left: 80%;
+}
+
+#projet1 {
+    background-color: #ff6f61;
+    z-index: 1;
+}
+#projet2 {
+    background-color: #6b5b95;
+    z-index: 2;
+}
+#projet3 {
+    background-color: #88b04b;
+    z-index: 3;
+}
+#projet4 {
+    background-color: #f7cac9;
+    z-index: 4;
+}
+#projet5 {
+    background-color: #92a8d1;
+    z-index: 5;
+}
+
+/* Classes dynamiques pour le contrôle visuel */
+.projet.active {
+    z-index: 10; /* Met en avant la projet active */
+}
+
+.projet.past {
+    z-index: 1; /* Réduit l'importance visuelle des projets passées */
+}
+.limite {
+    .svg {
+        top: 0;
+        left: 0;
+        max-width: 1920px;
+        max-height: 1020px;
+        width: 100%;
+        height: 100%;
+    }
+}

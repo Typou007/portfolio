@@ -3,19 +3,18 @@ titre
 */
 .title {
     position: relative;
-    width: 100%; 
-    max-width: 800px; 
-    margin: 0 auto; 
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.titre-svg-container{
-
-    position: relative; 
-    width: 100%; 
+.titre-svg-container {
+    position: relative;
+    width: 100%;
     padding-top: 36.89%; /* Aspect ratio to maintain the height based on the original SVG (332 / 900 * 100) */
-    height: 0; 
-    overflow: hidden; 
-    svg{
+    height: 0;
+    overflow: hidden;
+    svg {
         position: absolute; /* Absolute to fill the container */
         top: 0;
         left: 0;
@@ -37,7 +36,7 @@ titre
 /*
 grid
 */
-.propos-grid{
+.propos-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -50,137 +49,155 @@ présentation
 .presentation {
     position: relative;
     width: 100%;
-    margin: 0 10px;
-    grid-column: span 4;  /* Prendre 4 colonnes */
+    height: 100%;
+    grid-column: span 4; /* Prendre 4 colonnes */
 
-.presentation-container {
-    width: 100%;
-    height: 100%;  /* Assurez-vous que le conteneur prend toute la hauteur disponible */
-    overflow: hidden;
+    .presentation-container {
+        width: 100%;
+        height: 100%; /* Assurez-vous que le conteneur prend toute la hauteur disponible */
+        overflow: hidden;
 
-    svg {
-        top: 0;
-        left: 0;
-        width: 100%;  /* Prendre toute la largeur du conteneur */
-        height: 100%;  /* Prendre toute la hauteur également */
-        object-fit: cover;  /* S'adapter au conteneur sans déformation */
-
+        svg {
+            top: 0;
+            left: 0;
+            width: 100%; /* Prendre toute la largeur du conteneur */
+            height: 100%; /* Prendre toute la hauteur également */
+            object-fit: cover; /* S'adapter au conteneur sans déformation */
+        }
+        path {
+            width: 100%; /* Prendre toute la largeur du conteneur */
+            height: 100%; /* Prendre toute la hauteur également */
+        }
     }
-    path{
-        width: 100%;  /* Prendre toute la largeur du conteneur */
-        height: 100%;  /* Prendre toute la hauteur également */
+    .presentation-titrage {
+        position: absolute; /* Position overlay absolutely in relation to its container */
+        top: 6%;
+        left: 17%;
+        transform: translate(
+            -50%,
+            -50%
+        ); /* Adjust to make it perfectly centered */
+        color: white; /* Change color for visibility */
+        text-align: left; /* Center the text */
+        pointer-events: none; /* Disable interaction with the text */
     }
-    }
-.presentation-titrage{
-    position: absolute; /* Position overlay absolutely in relation to its container */
-    top: 6%;
-    left: 17%;
-    transform: translate(-50%, -50%); /* Adjust to make it perfectly centered */
-    color: white; /* Change color for visibility */
-    text-align: left; /* Center the text */
-    pointer-events: none; /* Disable interaction with the text */
-    }
-.presentation-overlay{
-    position: absolute;
-    top: 50%;  /* Centrer verticalement */
-    left: 50%;  /* Centrer horizontalement */
-    transform: translate(-50%, -50%);
-    color: white;
-    pointer-events: none;
-    text-align: left;
-    width: 90%;  /* Ajuster la largeur de l'overlay */
+    .presentation-overlay {
+        position: absolute;
+        top: 50%; /* Centrer verticalement */
+        left: 50%; /* Centrer horizontalement */
+        transform: translate(-50%, -50%);
+        color: white;
+        pointer-events: none;
+        text-align: left;
+        width: 90%; /* Ajuster la largeur de l'overlay */
     }
 }
 /*
 img
 */
-.img{
+.img {
     display: flex;
     grid-column: span 2;
     margin: 0 10px;
-    div{
+    div {
         max-width: 462px;
         width: 100%;
         max-height: 650px;
         height: auto;
 
-      img{
-        max-width: 462px;
-        width: 100%;
-        max-height: 650px;
-        height: auto;
-        border: 1px var(--color-primary) solid;
-        object-fit:cover;
-    }  
-    }  
+        img {
+            max-width: 462px;
+            width: 100%;
+            max-height: 650px;
+            height: auto;
+            border: 1px var(--color-primary) solid;
+            object-fit: cover;
+        }
+    }
 }
 /*
 loisir
 */
-.loisir{
+.loisir {
     width: 100%;
-    margin: 0 10px;
-    grid-column: span 3;  /* Prendre 3 colonnes */
+    grid-column: span 3; /* Prendre 3 colonnes */
 
-.offre{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-.produit{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    p{
-        font-weight: bold;
+    .offre {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+    }
+    .produit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p {
+            font-weight: bold;
+        }
+    }
+    .iconbg {
+        position: relative;
+        .iconp {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            z-index: 2;
+            color: var(--color-primary);
+            transform: translate(-50%, -50%);
+
+            svg {
+                max-width: 80px;
+                max-height: 80px;
+                width: 100%;
+                height: 100%;
+            }
+            .plus {
+                width: 150px;
+                height: 150px;
+                max-width: 200px;
+                max-height: 200px;
+            }
+        }
     }
 }
-.iconbg{
-    position: relative;
-.iconp{
+.presentation-overlay-loisir {
     position: absolute;
-    top: 45%;
-    left: 50%;
-    z-index: 2;
-    color: var(--color-primary);
-    transform: translate(-50%, -50%);
-    
-    svg{
-        max-width: 80px;
-        max-height: 80px;
-        width: 100%;
-        height: 100%;
-    };
-    .plus{
-        width: 150px;
-        height: 150px;
-        max-width: 200px;
-        max-height: 200px;
-    }
-        }   
-    }
-}
-.presentation-overlay-loisir{
-    position: absolute;
-    top: 60%;  /* Centrer verticalement */
-    left: 50%;  /* Centrer horizontalement */
+    top: 60%; /* Centrer verticalement */
+    left: 50%; /* Centrer horizontalement */
     transform: translate(-50%, -50%);
     color: white;
     pointer-events: none;
     text-align: left;
-    width: 90%;  /* Ajuster la largeur de l'overlay */
-    
-    .up{
-        position: relative;
-        top: 50%;  /* Centrer verticalement */
+    width: 90%; /* Ajuster la largeur de l'overlay */
+
+    .up-one {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 2;
     }
-    .down{
-        position: relative;
-        top: 70%;  /* Centrer verticalement */
+    .up-two {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    .down-one {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .down-two {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 4;
+        grid-column-end: 5;
     }
 }
 
-.presentation-titrage-loisir{
+.presentation-titrage-loisir {
     position: absolute; /* Position overlay absolutely in relation to its container */
     top: 11%;
     left: 19%;
@@ -192,60 +209,75 @@ loisir
 /*
 expertice
 */
-.expertise{
+.expertise {
+    position: relative;
+    height: 100%;
     width: 100%;
-    margin: 0 10px;
-    grid-column: span 3;  /* Prendre 3 colonnes */
+    grid-column: span 3; /* Prendre 3 colonnes */
 }
-.presentation-titrage-expert{
+.expertise-container {
+    width: 100%;
+    height: 100%; /* Assurez-vous que le conteneur prend toute la hauteur disponible */
+    overflow: hidden;
+    svg {
+        top: 0;
+        left: 0;
+        width: 100%; /* Prendre toute la largeur du conteneur */
+        height: 100%; /* Prendre toute la hauteur également */
+        object-fit: cover; /* S'adapter au conteneur sans déformation */
+    }
+}
+.expertise-titrage-expert {
     position: absolute;
-    top: 10%;  /* Centrer verticalement */
-    left: 50%;  /* Centrer horizontalement */
+    top: 10%; /* Centrer verticalement */
+    left: 50%; /* Centrer horizontalement */
     transform: translate(-50%, -50%);
     color: white;
     pointer-events: none;
     text-align: left;
-    width: 90%;  /* Ajuster la largeur de l'overlay */
-    }
-    .resulta{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .visuel{
-        position: relative;
-      }  
-    .logiciel{
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        z-index: 2;
-        color: var(--color-contrast);
-        transform: translate(-50%, -50%);
+    width: 90%; /* Ajuster la largeur de l'overlay */
+}
+.expertise-overlay-expert {
+    position: absolute;
+    top: 60%; /* Centrer verticalement */
+    left: 50%; /* Centrer horizontalement */
+    transform: translate(-50%, -50%);
+    color: white;
+    pointer-events: none;
+    text-align: left;
+    width: 90%; /* Ajuster la largeur de l'overlay */
+}
+.produit {
+    display: flex;
+    flex-direction: column;
+}
+.resulta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.visuel {
+    position: relative;
+}
+.logiciel {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    z-index: 2;
+    color: var(--color-contrast);
+    transform: translate(-50%, -50%);
 
-        svg{
-            width: 100%;
-            height: 100%;
-            max-width: 80px;
-            max-height: 80px;
-        }
-    }   
-        
-        .presentation-overlay-expert{
-            position: absolute;
-            top: 60%;  /* Centrer verticalement */
-            left: 50%;  /* Centrer horizontalement */
-            transform: translate(-50%, -50%);
-            color: white;
-            pointer-events: none;
-            text-align: left;
-            width: 90%;  /* Ajuster la largeur de l'overlay */
-        }
-
-        .bar{
-            position: relative;
-        }
-        .progress{
-            position: absolute;
-            z-index: 2;
-        }
+    svg {
+        width: 100%;
+        height: 100%;
+        max-width: 80px;
+        max-height: 80px;
+    }
+}
+.bar {
+    position: relative;
+}
+.progress {
+    position: absolute;
+    z-index: 2;
+}

@@ -15,7 +15,10 @@ export default class Scrolly {
   init() {
     this.setOptions(); // Configure les options en fonction des attributs data
     // Crée un observateur d'intersection avec les options configurées
-    const observer = new IntersectionObserver(this.watch.bind(this), this.options);
+    const observer = new IntersectionObserver(
+      this.watch.bind(this),
+      this.options
+    );
     // Sélectionne les éléments à observer
     const items = this.element.querySelectorAll('[data-scrolly]');
     // Démarre l'observation pour chaque élément
@@ -30,79 +33,81 @@ export default class Scrolly {
     const gridContainer = document.querySelector('.grid-container');
 
     function createGrid() {
-      const containerWidth = window.innerWidth;
-      const containerHeight = window.innerHeight;
-      const squareSize = 35; // Taille d'un carré
-      const numColumns = Math.floor(containerWidth / squareSize);
-      const numRows = Math.floor(containerHeight / squareSize);
-    
+      var containerWidth = window.innerWidth;
+      var containerHeight = window.innerHeight;
+      var squareSize = 35; // Taille d'un carré
+      var numColumns = Math.floor(containerWidth / squareSize);
+      var numRows = Math.floor(containerHeight / squareSize);
+
       gridContainer.style.gridTemplateColumns = `repeat(${numColumns}, 1fr)`;
       gridContainer.style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
-    
+
       gridContainer.innerHTML = ''; // Réinitialise la grille
-    
+
       for (let i = 0; i < numColumns * numRows; i++) {
         const gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
         gridContainer.appendChild(gridItem);
       }
     }
-    
+
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    
+
     // Fonction pour changer la couleur des voisins
     function changeSurroundingColors(index, columns) {
       const items = document.querySelectorAll('.grid-item');
-      
+
       // Positions autour de l'élément actuel (gauche, droite, haut, bas et diagonales)
       const positions = [
-        -columns - 1, -columns, -columns + 1,  // Carrés du dessus
-        -1, 1,                                // Carrés sur les côtés
-        columns - 1, columns, columns + 1     // Carrés du dessous
+        -columns - 1,
+        -columns,
+        -columns + 1, // Carrés du dessus
+        -1,
+        1, // Carrés sur les côtés
+        columns - 1,
+        columns,
+        columns + 1, // Carrés du dessous
       ];
-    
+
       // Parcourt les positions autour de l'élément
       positions.forEach((position) => {
         const neighborIndex = index + position;
-    
+
         // Vérifie si l'index du voisin est valide
         if (neighborIndex >= 0 && neighborIndex < items.length) {
           const item = items[neighborIndex];
-          
+
           // Change la couleur de la bordure du voisin
           item.style.borderColor = '#C6FF00'; // Couleur de bordure lorsque survolé
         }
       });
     }
-    
+
     // Gestion du survol des éléments de la grille
     gridContainer.addEventListener('mouseover', (event) => {
       if (event.target.classList.contains('grid-item')) {
         const items = Array.from(document.querySelectorAll('.grid-item'));
         const index = items.indexOf(event.target);
         const numColumns = Math.floor(window.innerWidth / 35);
-    
+
         // Réinitialiser les couleurs de la bordure
-        items.forEach(item => {
+        items.forEach((item) => {
           item.style.borderColor = '#312f2f'; // Réinitialise la bordure
           item.style.opacity = 1; // Réinitialise l'opacité
         });
-    
+
         // Change les couleurs autour de l'élément survolé
         changeSurroundingColors(index, numColumns);
       }
     });
-    
+
     // Génère la grille initiale
     createGrid();
-    
+
     // Gère la régénération de la grille lors du redimensionnement
     window.addEventListener('resize', createGrid);
-    
-
-    
 
     /**
      * temporaire

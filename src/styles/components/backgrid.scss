@@ -1,42 +1,26 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100%;
-    position: relative;
-    background: #312f2f;
-  }
-  
-  /* Grille couvrant toute la page avec scrolling */
-  .grid-container {
-    position: fixed; /* Fixé pour suivre le scroll */
+// Grille couvrant toute la page avec scrolling
+.grid-container {
+    position: fixed; // Fixé pour suivre le scroll
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh; /* Fixé à la vue de la fenêtre */
+    height: 100vh; // Fixé à la vue de la fenêtre //
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
-    pointer-events: none; /* Empêche les interactions si besoin */
+    pointer-events: none; // Empêche les interactions si besoin
     z-index: 1;
-  }
-  
-  .grid-item {
+}
+
+.grid-item {
     background-color: #171616;
     border: 1px solid #312f2f;
     box-sizing: border-box;
-    /* Ajoute cette ligne pour t'assurer que les événements de la souris sont actifs */
+    // Ajoute cette ligne pour t'assurer que les événements de la souris sont actifs
     pointer-events: auto;
-  }
-  
-  /* Contenu au-dessus de la grille */
-  .content {
+}
+
+// Contenu au-dessus de la grille
+.content {
     position: relative;
     z-index: 2;
-    text-align: center;
-    color: #333;
-    pointer-events: none; /* Empêche les interactions avec le texte */
-  }
-  
-
-  
+    // pointer-events: none; // à activer uniquement si le projet est a présenter active l'animation du background
+}
