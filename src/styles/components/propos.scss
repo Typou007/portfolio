@@ -247,9 +247,10 @@ expertice
     text-align: left;
     width: 90%; /* Ajuster la largeur de l'overlay */
 }
-.produit {
+.evaluation {
     display: flex;
     flex-direction: column;
+    gap: 30px;
 }
 .resulta {
     display: flex;
