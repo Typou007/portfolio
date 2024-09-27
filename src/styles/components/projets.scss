@@ -15,40 +15,7 @@
     margin-top: -5vh; /* Remplace le haut de la projet pour qu'elle "touche" le haut */
 }
 
-.projet::before {
-    content: attr(id);
-    position: absolute;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 1em;
-    color: red;
-    pointer-events: none;
-    left: 20px;
-    top: 20px;
-    z-index: 1;
-}
-
 /* Styles spécifiques pour chaque projet */
-#projet1::before {
-    top: -3%;
-    left: 8%;
-}
-#projet2::before {
-    top: -4%;
-    left: 26%;
-}
-#projet3::before {
-    top: -4%;
-    left: 41%;
-}
-#projet4::before {
-    top: -4%;
-    left: 57%;
-}
-#projet5::before {
-    top:-4%;
-    left: 73%;
-}
 
 #projet1 {
     z-index: 1;
@@ -68,23 +35,147 @@
     z-index: 5;
 }
 
+.projet1{
+    position: absolute;
+    top: -4%;
+    left: 8%
+}
+.projet2{
+    position: absolute;
+    top: -4%;
+    left: 26%;
+}
+.projet3{
+    position: absolute;
+    top: -4%;
+    left: 41%;
+}
+.projet4{
+    position: absolute;
+    top: -4%;
+    left: 58%;
+}
+.projet5{
+    position: absolute;
+    top: -4%;
+    left: 75%;
+}
+
 /* Classes dynamiques pour le contrôle visuel */
-.projet.active {
-    z-index: 10; /* Met en avant la projet active */
-}
-
-.projet.past {
-    z-index: 1; /* Réduit l'importance visuelle des projets passées */
-}
-
 
 .projet-container {
-    width: 100%; 
+    position: relative;
+    height: 100%;
+    
     svg {
-
-        top: -7%;
-        left: 0;
         width: 100%;
         height: 100%;
+        max-width: 100%;
+    }
+    .affiche{
+        position: absolute;
+        top: 2%;
+        left: 0;
+        margin: 50px;
+    }
+}
+.projet-info{
+    .entrepot{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-height: 100%;
+        height: 100%;        
+   .txt{
+    width: 100%;
+   }
+   div{
+    .etage{
+        display: flex;
+        gap: 16px;
+        .arriere{
+            position: relative;
+            color: var(--color-secondary);
+                
+            .app{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                    
+            }
+        }    
+    }
+    .btn {
+        .btn-fond {
+            position: relative;
+    
+            .savoir {
+                display: flex;
+                position: absolute;
+                width: 80%;
+                height: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                justify-content: space-between;
+                align-items: center;
+            }
+    
+            /* Changement de couleur du SVG lors du hover */
+            &:hover .svg-btn path {
+                fill: #C6FF01; /* Couleur que tu veux lors du hover */
+            }
+    
+            a:hover {
+                color: red;
+            }
+        }
+    }
+    
+   }
+    
+ }
+}
+.projet-image{
+    img{
+        max-width: 100%;
+        width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+}
+.projet-titre{
+    h2{
+        margin: 0;
+        color: var(--color-secondary);
+    }
+    h1{
+        color: var(--color-primary);
+    }
+}
+.affiche{
+    max-height: 850px;
+    height: 100%;
+    display: grid ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    .projet-titre{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .projet-image{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 5;
+    }
+    .projet-info{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 5;
     }
 }
