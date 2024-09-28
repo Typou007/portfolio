@@ -9,10 +9,10 @@
     font-size: 3em;
     color: white;
     position: sticky;
-    top: 5%; /* Décalage de 10% vers le bas */
+    top: 2%; /* Décalage de 10% vers le bas */
     width: 100%;
     transition: transform 0.5s ease-out;
-    margin-top: -5vh; /* Remplace le haut de la projet pour qu'elle "touche" le haut */
+    margin-top: -2vh; /* Remplace le haut de la projet pour qu'elle "touche" le haut */
 }
 
 /* Styles spécifiques pour chaque projet */
@@ -128,7 +128,7 @@
             }
     
             a:hover {
-                color: red;
+                color: #171616;
             }
         }
     }
@@ -159,7 +159,7 @@
     height: 100%;
     display: grid ;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     .projet-titre{
         grid-column-start: 1;
         grid-column-end: 3;
