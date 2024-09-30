@@ -12,7 +12,8 @@ fieldset {
     width: 100%;
     box-sizing: border-box;
 }
-@media screen and (min-width: 768px) { /* Ou la valeur exacte de $breakpoint-md */
+@media screen and (min-width: 768px) {
+    /* Ou la valeur exacte de $breakpoint-md */
     .form-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -22,16 +23,14 @@ svg {
     height: auto;
 }
 
-.position{
+.position {
     top: 20%;
     left: 10% !important;
     width: 85% !important;
-    
 }
-.selection{
+.selection {
     top: 30% !important;
 }
-
 
 .formulaire {
     margin: auto;
@@ -48,16 +47,15 @@ svg {
         border: none;
         padding: 0;
 
-        h5{
+        h5 {
             font-family: var(--font-secondary);
             font-size: var(--font-size-h5);
             color: var(--color-primary);
             font-weight: bolder;
         }
     }
-    .space{
-        
-            margin-bottom: 100px;
+    .space {
+        margin-bottom: 100px;
     }
     .form-grid {
         display: grid;
@@ -72,7 +70,7 @@ svg {
 }
 .u-grid-fullwitdh {
     grid-column: 1 / -1 !important;
-    p{
+    p {
         font-family: var(--font-secondary);
         font-size: var(--font-size-p);
         color: var(--color-primary);
@@ -81,11 +79,10 @@ svg {
 }
 
 .form__footer {
-    display: flex;
-    justify-content: flex-end;
     @media screen and (max-width: $breakpoint-md) {
+        display: flex;
         justify-content: flex-start;
-    } 
+    }
 }
 
 .form__body {
@@ -97,7 +94,7 @@ svg {
 .form__confirmation {
     display: none;
 
-    p{
+    p {
         font-family: var(--font-secondary);
         font-size: var(--font-size-p);
     }
@@ -122,7 +119,7 @@ svg {
 
 .input__element {
     border-radius: 1px;
-    background-color: #B5B5B51A;
+    background-color: #b5b5b51a;
     cursor: pointer;
     font-family: inherit;
     font-style: italic;
@@ -135,11 +132,10 @@ svg {
     border: none;
     outline: none;
     padding: 0;
-        
-        &::placeholder {
-            color: transparent;
-        }
 
+    &::placeholder {
+        color: transparent;
+    }
 
     &:-webkit-autofill,
     &:-webkit-autofill:active {
@@ -158,7 +154,6 @@ svg {
         background-color: var(--color-primary);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         -webkit-box-shadow: inset 0 0 0 300px var(--color-bg-secondary) !important;
-
     }
     //autocomplete
     &::placeholder {
@@ -193,8 +188,7 @@ svg {
     &::after {
         --size: 120px;
         content: '';
-        background: url('/src/assets/icons/flechebas.svg') no-repeat 50%
-            50%;
+        background: url('/src/assets/icons/flechebas.svg') no-repeat 50% 50%;
         background-size: 100%;
         height: var(--size);
         position: absolute;
@@ -212,7 +206,6 @@ svg {
     .input__element {
         resize: vertical;
         height: 80%;
-
     }
 }
 /*
@@ -221,13 +214,13 @@ svg {
 .input {
     position: relative;
 
-    .text{
+    .text {
         font-family: var(--font-primary);
         font-weight: 400;
         font-size: var(--font-size-p);
         font-family: var(--font-secondary);
     }
-    .sub{
+    .sub {
         font-family: var(--font-primary);
         font-weight: 600;
         font-size: var(--font-size-p);
@@ -248,7 +241,7 @@ svg {
     .input__label {
         --size: 22px;
         cursor: pointer;
-        
+
         padding-left: calc(var(--size) + var(--spacing-sm));
         position: relative;
 
@@ -314,7 +307,6 @@ svg {
     &.check .input__label::before,
     &.radio .input__label::before {
         box-shadow: inset 0 0 0 3px var(--color-fail);
-        
     }
 
     .input__label {
@@ -322,8 +314,7 @@ svg {
     }
 }
 
-
-.form-container{
+.form-container {
     width: 100%;
     overflow: hidden;
     svg {
@@ -335,41 +326,40 @@ svg {
     }
 }
 
-.input__label{
+.input__label {
     position: absolute;
     top: 12%;
     left: 3%;
-    color: var(--color-white); 
+    color: var(--color-white);
 }
-.input__label_comentaire{
+.input__label_comentaire {
     top: 5%;
 }
-    .etage{
-        height: 100%;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        justify-content: center;
-        .arriere{
-            position: relative;
-            .app{
-                
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+.etage {
+    height: 100%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    .arriere {
+        position: relative;
+        .app {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
 
-                svg{
-                    width: 120px;
-                    height: 120px;
-                }
+            svg {
+                width: 120px;
+                height: 120px;
             }
         }
     }
+}
 
-    .bouton{
+.bouton {
     display: inline-block;
     padding: 10px 20px;
     background-color: var(--color-bg-secondary);
@@ -377,16 +367,16 @@ svg {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color .3s;
-    }
-    .bouton:hover {
-        background-color: var(
-            --color-primary
-        ); /* Changement de couleur au survol */
-        color: var(--color-white);
-        a {
-            svg {
-                background-color: var(--color-secondary);
-            }
+    transition: background-color 0.3s;
+}
+.bouton:hover {
+    background-color: var(
+        --color-primary
+    ); /* Changement de couleur au survol */
+    color: var(--color-white);
+    a {
+        svg {
+            background-color: var(--color-secondary);
         }
     }
+}

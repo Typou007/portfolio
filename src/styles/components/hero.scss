@@ -13,11 +13,10 @@
     max-height: 570px;
     min-height: 200px;
 }
-.hero_content{
+.hero_content {
     position: absolute;
     bottom: 10%;
-    
-    
+
     width: 100%; /* Use full width of the parent */
     max-width: 900px; /* Set a maximum width to prevent it from exceeding the SVG size */
     height: auto; /* Allow height to adjust based on the width */
@@ -25,7 +24,7 @@
         right: 5%;
     }
 }
-.hero-svg-container{
+.hero-svg-container {
     position: relative; /* Position relative for text positioning */
     width: 100%; /* Make it responsive */
     height: auto; /* Allow it to adjust based on the aspect ratio of the SVG */
@@ -36,8 +35,8 @@
     top: 60%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for perfect centering */
-    color:var(--color-bg-secondary); /* Change text color for visibility */
-    width: 100%;
+    color: var(--color-bg-secondary); /* Change text color for visibility */
+    width: 95%;
 }
 .text-overlay-top {
     position: absolute; /* Absolute positioning to overlay the text */

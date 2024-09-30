@@ -1,85 +1,19 @@
-.footer-container {
-    max-width: 1440px;
-    margin: auto;
-    display: grid;
-    padding: 100px 0;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: var(--spacing-sm);
-    @media screen and (max-width: 800px) {
-        grid-template-rows: 1fr 1fr auto;
-        grid-template-columns: 1fr;
-        justify-items: center;
-    }
-}
-
-.footer_info1 {
+footer {
     position: relative;
+    z-index: 10;
+    background-color: var(--color-bg-secondary);
+}
+.footer-container {
+    margin: auto;
     display: flex;
-    text-align: right;
-    flex-direction: column;
-    color: var(--color-primary);
 
-    h4 {
-        font-family: var(--font-secondary);
-        font-size: var(--font-size-h4);
-        margin-top: 0;
-        margin-bottom: 32px;
-    }
-    p {
-        font-family: var(--font-secondary);
-        font-size: var(--font-size-p);
-    }
-    .footer_size {
-        max-width: 285px;
-        margin-left: auto;
-    }
-}
-.footer_info1::before {
-    content: '';
-    position: absolute;
-    left: 110%;
-    bottom: 50%;
-    height: 50%;
-    width: 1px;
-    border-right: 1px solid var(--color-secondary);
-
-    @media screen and (max-width: 800px) {
-        left: 0;
-        bottom: 0;
-        height: 1px;
-        width: 325px;
-        border-right: 0 solid var(--color-secondary);
-        border-bottom: 1px solid var(--color-secondary);
-    }
-    @media screen and (max-width: 400px) {
-        width: 0;
-    }
-}
-.footer_info3::before {
-    content: '';
-    position: absolute;
-    right: 110%;
-    bottom: 50%;
-    height: 50%;
-    width: 1px;
-    border-right: 1px solid var(--color-secondary);
-    @media screen and (max-width: 800px) {
-        left: -63%;
-        bottom: 105%;
-        height: 1px;
-        width: 325px;
-        border-right: 0 solid var(--color-secondary);
-        border-top: 1px solid var(--color-secondary);
-    }
-    @media screen and (max-width: 400px) {
-        width: 0;
-    }
+    gap: var(--spacing-sm);
+    max-width: 1440px;
 }
 
-.footer_info2 {
+.footer_info {
     display: flex;
     justify-content: flex-start;
-    flex-direction: column;
     align-items: center;
 
     .footer__brand {
