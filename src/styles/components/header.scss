@@ -132,6 +132,9 @@
             font-weight: bold;
             font-size: 20px;
         }
+        a:hover{
+            color: var(--color-contrast);
+        }
     }
     @media screen and (min-width: $breakpoint-md) {
         display: block;

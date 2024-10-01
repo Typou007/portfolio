@@ -32,3 +32,63 @@
 .section {
     overflow: hidden; // Empêche l'apparition de la barre de défilement horizontale
   }
+
+  /*
+  Card
+  */
+  .card {
+    position: relative;
+    overflow: hidden;
+    max-width: 373px;
+    img {
+        object-fit: cover;
+    }
+}
+
+.card-media {
+    width: 100%;
+    max-height: 640px;
+    filter: blur(2px); /* Ajoute un flou lorsque la souris survole */
+    clip-path: path("M1.5 284.783V1.5H327.642V76.4529C327.642 76.9592 327.796 77.4536 328.083 77.8706L375.5 146.738V454.5H45.4508V343.673C45.4508 343.128 45.2728 342.598 44.944 342.163L1.5 284.783Z");
+    transition: filter 0.3s ease;
+}
+
+.card-content {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    background-color: #B5B5B5;
+    color: var(--color-secondary);
+    padding: 30px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    box-sizing: border-box; // Inclure le padding dans le calcul de la largeur 
+    h5 {
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-h5);
+        margin: 0;
+        margin-top: 10px;
+        color: var(--color-primary);
+    }
+    p {
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-s);
+        margin: 0;
+        color: var(--color-secondary);
+    }
+    .date {
+        font-family: var(--font-third);
+        font-size: var(--font-size-p);
+        text-align: right;
+        color: var(--color-primary);
+    }
+}
+
+.card:hover .card-media {
+    filter: blur(0px); /* Ajoute un flou de 5px sur l'image au survol */
+}
+
+.card:hover .card-content {
+    transform: translateY(0);
+}

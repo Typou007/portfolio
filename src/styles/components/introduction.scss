@@ -1,0 +1,220 @@
+.intro-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 50px;
+}
+.intro-text{
+    position: relative;
+    height: 100%;
+
+    svg{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .intro-affiche{
+        position: absolute;
+        display: flex;
+        bottom: 4%;
+        left: 0;
+        margin: 0 50px;
+        flex-direction: column;
+        height: 80%;
+    h2{
+        font-size: #{typo(28px, 52px)};
+    }
+    }
+    .projet-info{
+        .entrepot{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-height: 100%;
+            height: 100%;        
+       .txt{
+        width: 100%;
+       }
+       div{
+        .etage{
+            display: flex;
+            gap: 16px;
+            height: 120px;
+            .arriere{
+                position: relative;
+                color: var(--color-secondary);
+                    
+                .app{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                        
+                }
+            }    
+        }
+        .btn {
+            .btn-fond {
+                position: relative;
+        
+                .savoir {
+                    display: flex;
+                    position: absolute;
+                    width: 80%;
+                    height: 100%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    justify-content: space-between;
+                    align-items: center;
+                }
+        
+                /* Changement de couleur du SVG lors du hover */
+                &:hover .svg-btn path {
+                    fill: #C6FF01; /* Couleur que tu veux lors du hover */
+                }
+        
+                a:hover {
+                    color: #171616;
+                }
+            }
+        }
+        
+       }
+        
+     }
+    }
+}
+.template{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    svg{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.resum{
+    .resum-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 21px 56px;
+
+        .template{
+
+            .tex-up-left{
+                position: absolute;
+                top: 5%;
+                left: 0;
+                padding: 0 20px 0 120px;
+                p{
+                    margin: 0;
+                }
+                
+            }
+            .tex-up{
+                position: absolute;
+                top: 25%;
+                left: 0;
+                width: 100%;
+                
+                ul{
+                    padding-left: 10% ;
+                }
+                li{
+                    font-size: 40px;
+                    padding-bottom: 15%;
+                    color: var(--color-secondary);
+                }
+            }
+            .tex{
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 50px;
+            }
+            .titrage-up{
+                position: absolute;
+                top: 6%;
+                left: 5%;
+                color: var(--color-white);
+                h4{
+                    margin: 0;
+                }
+            }
+            .titrage-down{
+                position: absolute;
+                bottom: 6%;
+                left: 5%;
+                color: var(--color-white);
+                h4{
+                    margin: 0;
+                }
+                
+            }
+        }
+        .long{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+    }
+}
+.competence{
+    .comp-flex{
+        display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 46px;
+    
+        .template{
+
+        .texte-comp{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            p{
+                margin: 0px;
+            }
+        }
+        .img{
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            max-height: 80%;
+            object-fit: cover;
+        }
+    }
+    }
+    
+
+}
+.etape{
+    .etape-text{
+        .template{
+
+           .texte-etape{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            p{
+                margin: 0px;
+            }  
+        }
+       
+        }
+    }
+}
+
+
+.fit{
+    clip-path: path("M637.505 3.00008L1437 3C1437.55 3 1438 3.44773 1438 4.00001L1438 673.929C1438 674.482 1437.55 674.929 1437 674.929L952.011 674.929C951.883 674.929 951.757 674.954 951.639 675.001L637.389 800.928C637.271 800.976 637.145 801 637.017 801L4.00018 801C3.44781 801 3.00018 800.552 3.00018 800L3.00011 127.388C3.00011 126.836 3.44774 126.388 4.00011 126.388L445.948 126.388C446.141 126.388 446.329 126.333 446.491 126.228L636.963 3.16015C637.124 3.05566 637.313 3.00008 637.505 3.00008Z");
+}
