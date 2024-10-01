@@ -78,13 +78,6 @@ svg {
     }
 }
 
-.form__footer {
-    @media screen and (max-width: $breakpoint-md) {
-        display: flex;
-        justify-content: flex-start;
-    }
-}
-
 .form__body {
     .is-sent & {
         display: none;
