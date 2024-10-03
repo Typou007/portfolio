@@ -39,6 +39,7 @@
     position: absolute;
     top: -3%;
     left: 6%;
+    z-index: 10;
 }
 .projet2{
     position: absolute;
@@ -93,16 +94,17 @@
     .etage{
         display: flex;
         gap: 16px;
-        height: 120px;
+        max-height: 40%;
         .arriere{
             position: relative;
             color: var(--color-secondary);
                 
             .app{
                 position: absolute;
-                top: 50%;
+                top: 45%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                height: 100%;
                     
             }
         }    
@@ -162,10 +164,13 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     .projet-titre{
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 2;
+        display: flex;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    flex-direction: column;
+    justify-content: center;
     }
     .projet-image{
         grid-column-start: 2;

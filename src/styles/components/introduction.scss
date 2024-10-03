@@ -24,7 +24,7 @@
         height: 80%;
     h2{
         font-size: #{typo(28px, 52px)};
-    }
+        }
     }
     .projet-info{
         .entrepot{
@@ -90,7 +90,14 @@
     position: relative;
     width: 100%;
     height: 100%;
-
+    .univers-texte{
+        position: absolute;
+        top: 0;
+        padding: 10px;
+            p{
+            margin: 0px;
+            }  
+        }    
     svg{
         top: 0;
         left: 0;
@@ -106,23 +113,11 @@
         gap: 21px 56px;
 
         .template{
-
-            .tex-up-left{
-                position: absolute;
-                top: 5%;
-                left: 0;
-                padding: 0 20px 0 120px;
-                p{
-                    margin: 0;
-                }
-                
-            }
             .tex-up{
                 position: absolute;
                 top: 25%;
                 left: 0;
                 width: 100%;
-                
                 ul{
                     padding-left: 10% ;
                 }
@@ -137,6 +132,16 @@
                 top: 0;
                 left: 0;
                 padding: 50px;
+                width: 100%;
+
+                ul{
+                    padding-left: 10% ;
+                }
+                li{
+                    font-size: 40px;
+                    padding-bottom: 15%;
+                    color: var(--color-secondary);
+                }
             }
             .titrage-up{
                 position: absolute;
@@ -166,55 +171,52 @@
         }
     }
 }
-.competence{
-    .comp-flex{
-        display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 46px;
-    
-        .template{
-
-        .texte-comp{
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 10px;
-            p{
-                margin: 0px;
-            }
-        }
-        .img{
-            position: absolute;
-            bottom: 5%;
-            right: 5%;
-            max-height: 80%;
-            object-fit: cover;
-        }
-    }
-    }
-    
-
-}
-.etape{
-    .etape-text{
-        .template{
-
-           .texte-etape{
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 10px;
-            p{
-                margin: 0px;
+.template{
+    .univers-texte{
+        position: absolute;
+        top: 0;
+        padding: 10px;
+         p{
+            margin: 0px;
             }  
-        }
-       
-        }
-    }
+        }    
 }
+.texte-etape{
+    top: 11% !important;   
+   }
 
-
+.full-flex{
+    display: flex;
+    gap: 46px;
+    flex-direction: column;
+}
 .fit{
     clip-path: path("M637.505 3.00008L1437 3C1437.55 3 1438 3.44773 1438 4.00001L1438 673.929C1438 674.482 1437.55 674.929 1437 674.929L952.011 674.929C951.883 674.929 951.757 674.954 951.639 675.001L637.389 800.928C637.271 800.976 637.145 801 637.017 801L4.00018 801C3.44781 801 3.00018 800.552 3.00018 800L3.00011 127.388C3.00011 126.836 3.44774 126.388 4.00011 126.388L445.948 126.388C446.141 126.388 446.329 126.333 446.491 126.228L636.963 3.16015C637.124 3.05566 637.313 3.00008 637.505 3.00008Z");
+}
+.etape-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.ecriture{
+    position: absolute;
+    top: 0;
+    padding: 10px;
+}
+
+.gauche{
+    p{
+        padding-right: 15%;     
+    }  
+}
+.droite{
+    p{
+        padding-left: 15%;     
+    }  
+}
+
+.video{
+    border: 5px #769703 solid ;
+    border-radius: 3px;
+
 }

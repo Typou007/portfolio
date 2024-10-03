@@ -1,26 +1,27 @@
-// Grille couvrant toute la page avec scrolling
-.grid-container {
-    position: fixed; // Fixé pour suivre le scroll
+/* Le background interactif */
+#background {
+    position: fixed; /* Le background est fixe */
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh; // Fixé à la vue de la fenêtre //
-    display: grid;
-    pointer-events: none; // Empêche les interactions si besoin
-    z-index: 1;
-}
-
-.grid-item {
+    height: 100vh;
     background-color: #171616;
     border: 1px solid #312f2f;
     box-sizing: border-box;
-    // Ajoute cette ligne pour t'assurer que les événements de la souris sont actifs
-    pointer-events: auto;
+    pointer-events: none; /* Empêche toute interaction directe avec cet élément */
+    z-index: -1; /* Place le background derrière les autres éléments */
 }
 
-// Contenu au-dessus de la grille
-.content {
-    position: relative;
-    z-index: 2;
-    //pointer-events: none; // à activer uniquement si le projet est a présenter active l'animation du background
+.case {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #312f2f;
+    background-color: #1c1c1c;
+    position: absolute;
+    box-sizing: border-box;
+    transition: background-color 0.1s ease;
+}
+
+.case.active {
+    border-color:var(--color-primary);
 }

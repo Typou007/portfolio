@@ -30,84 +30,48 @@ export default class Scrolly {
     /**
      * temporaire
      */
-    const gridContainer = document.querySelector('.grid-container');
+      // Taille d'une case
+// Taille d'une case
+const caseSize = 35;
 
-    function createGrid() {
-      var containerWidth = window.innerWidth;
-      var containerHeight = window.innerHeight;
-      var squareSize = 35; // Taille d'un carré
-      var numColumns = Math.floor(containerWidth / squareSize);
-      var numRows = Math.floor(containerHeight / squareSize);
+// Créer des cases dynamiquement pour remplir l'écran
+const background = document.getElementById('background');
+const columns = Math.ceil(window.innerWidth / caseSize);
+const rows = Math.ceil(window.innerHeight / caseSize);
 
-      gridContainer.style.gridTemplateColumns = `repeat(${numColumns}, 1fr)`;
-      gridContainer.style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
+function createCase(x, y) {
+    const div = document.createElement('div');
+    div.classList.add('case');
+    div.style.left = `${x * caseSize}px`;
+    div.style.top = `${y * caseSize}px`;
+    background.appendChild(div);
+}
 
-      gridContainer.innerHTML = ''; // Réinitialise la grille
-
-      for (let i = 0; i < numColumns * numRows; i++) {
-        const gridItem = document.createElement('div');
-        gridItem.classList.add('grid-item');
-        gridContainer.appendChild(gridItem);
-      }
+// Remplir l'écran avec des cases
+for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < columns; j++) {
+        createCase(j, i);
     }
+}
 
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
+// Écouteur global de la position de la souris
+document.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    // Calculer la case active en fonction de la position de la souris
+    const col = Math.floor(mouseX / caseSize);
+    const row = Math.floor(mouseY / caseSize);
+
+    // Désactiver toutes les cases
+    document.querySelectorAll('.case').forEach(c => c.classList.remove('active'));
+
+    // Activer la case survolée
+    const activeCase = document.querySelector(`.case:nth-child(${(row * columns) + col + 1})`);
+    if (activeCase) {
+        activeCase.classList.add('active');
     }
-
-    // Fonction pour changer la couleur des voisins
-    function changeSurroundingColors(index, columns) {
-      const items = document.querySelectorAll('.grid-item');
-
-      // Positions autour de l'élément actuel (gauche, droite, haut, bas et diagonales)
-      const positions = [
-        -columns - 1,
-        -columns,
-        -columns + 1, // Carrés du dessus
-        -1,
-        1, // Carrés sur les côtés
-        columns - 1,
-        columns,
-        columns + 1, // Carrés du dessous
-      ];
-
-      // Parcourt les positions autour de l'élément
-      positions.forEach((position) => {
-        const neighborIndex = index + position;
-
-        // Vérifie si l'index du voisin est valide
-        if (neighborIndex >= 0 && neighborIndex < items.length) {
-          const item = items[neighborIndex];
-
-          // Change la couleur de la bordure du voisin
-          item.style.borderColor = '#C6FF00'; // Couleur de bordure lorsque survolé
-        }
-      });
-    }
-
-    // Gestion du survol des éléments de la grille
-    gridContainer.addEventListener('mouseover', (event) => {
-      if (event.target.classList.contains('grid-item')) {
-        const items = Array.from(document.querySelectorAll('.grid-item'));
-        const index = items.indexOf(event.target);
-        const numColumns = Math.floor(window.innerWidth / 35);
-
-        // Réinitialiser les couleurs de la bordure
-        items.forEach((item) => {
-          item.style.borderColor = '#312f2f'; // Réinitialise la bordure
-          item.style.opacity = 1; // Réinitialise l'opacité
-        });
-
-        // Change les couleurs autour de l'élément survolé
-        changeSurroundingColors(index, numColumns);
-      }
-    });
-
-    // Génère la grille initiale
-    createGrid();
-
-    // Gère la régénération de la grille lors du redimensionnement
-    window.addEventListener('resize', createGrid);
+});
 
     /**
      * temporaire
