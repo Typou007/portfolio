@@ -11,7 +11,7 @@
             transform: scale(1);
         }
     }
-   
+
     [data-scrolly='fromBottom'] {
         opacity: 0;
         transform: translateY(60px);
@@ -21,18 +21,16 @@
             transform: translateY(0);
         }
     }
-    /*[data-scrolly='fromLeft'] {
+    [data-scrolly='fromLeft'] {
         opacity: 0;
         transform: translateX(-160px);
-        @media screen and (max-width: $breakpoint-md){
-            transform: translateX(-80px);
-        }
-        transition: all 1.4s ease-out;
+        transition: all 0.8s ease-out;
         &.is-active {
             opacity: 1;
             transform: translateX(0);
         }
-    }*/
+    }
+
     [data-scrolly='fromTop'] {
         opacity: 0;
         transform: translateY(-160px);
@@ -46,7 +44,7 @@
         opacity: 0;
         transform: translateX(160px);
         transition: all 1.4s ease-out;
-        @media screen and (max-width: $breakpoint-md){
+        @media screen and (max-width: $breakpoint-md) {
             transform: translateX(80px);
         }
         &.is-active {
@@ -64,7 +62,7 @@
         }
     }
 
-/*
+    /*
 fait par mes soignes
 */
 
@@ -77,14 +75,13 @@ fait par mes soignes
             transform: rotate(0deg) scale(1);
         }
     }
-        [data-scrolly='fromRotationBigSmall'] {
-            opacity: 0;
-            transform: rotate(70deg) scale(2,0);
-            transition: all 0.6s ease-out;
-            &.is-active {
-                opacity: 1;
-                transform: rotate(0deg) scale(1);
-            }
+    [data-scrolly='fromRotationBigSmall'] {
+        opacity: 0;
+        transform: rotate(70deg) scale(2, 0);
+        transition: all 0.6s ease-out;
+        &.is-active {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
         }
-    
+    }
 }
