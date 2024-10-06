@@ -35,6 +35,12 @@ footer {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    
+    @media screen and (max-width: 1000px){
+        flex-direction: column;
+        gap: 10px;
+    }
+    
 
     .footer__brand {
         text-decoration: none;

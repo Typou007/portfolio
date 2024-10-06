@@ -42,6 +42,12 @@ grid
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 20px;
+    
+    @media screen and (max-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /*
@@ -73,14 +79,15 @@ présentation
     .presentation-titrage {
         position: absolute; /* Position overlay absolutely in relation to its container */
         top: 6%;
-        left: 17%;
-        transform: translate(
-            -50%,
-            -50%
-        ); /* Adjust to make it perfectly centered */
+        left: 17%;    
+        transform: translate(-50%, -50%);
         color: white; /* Change color for visibility */
         text-align: left; /* Center the text */
         pointer-events: none; /* Disable interaction with the text */
+        h3{
+            margin: 0;
+        }
+
     }
     .presentation-overlay {
         position: absolute;
@@ -276,4 +283,41 @@ expertice
 .progress {
     position: absolute;
     z-index: 2;
+}
+
+/*
+responsif
+*/
+
+.propos-grid {   
+    @media screen and (max-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+    }
+}
+.presentation{
+    @media screen and (max-width: 1000px) {
+    height: 400px;
+        .presentation-overlay {
+            width: 97%;
+        }
+        .presentation-titrage {
+            transform: translate(0 , 0);
+            left: 1%;
+            top: 1%;
+
+        
+        }     
+    }
+    @media screen and (max-width: 600px){
+        .presentation-titrage{
+            top: 3%;
+            h3{
+                font-size: 16px;
+            }
+        }
+    }
+    
 }
