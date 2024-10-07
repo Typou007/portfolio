@@ -42,7 +42,7 @@ grid
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 20px;
-    
+
     @media screen and (max-width: 1000px) {
         display: flex;
         flex-direction: column;
@@ -79,15 +79,14 @@ présentation
     .presentation-titrage {
         position: absolute; /* Position overlay absolutely in relation to its container */
         top: 6%;
-        left: 17%;    
+        left: 17%;
         transform: translate(-50%, -50%);
         color: white; /* Change color for visibility */
         text-align: left; /* Center the text */
         pointer-events: none; /* Disable interaction with the text */
-        h3{
+        h3 {
             margin: 0;
         }
-
     }
     .presentation-overlay {
         position: absolute;
@@ -133,7 +132,6 @@ loisir
     .offre {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
         gap: 20px;
     }
     .produit {
@@ -163,48 +161,24 @@ loisir
         }
     }
 }
-.presentation-overlay-loisir {
+.contenu-loisir {
     position: absolute;
-    top: 60%; /* Centrer verticalement */
-    left: 50%; /* Centrer horizontalement */
     transform: translate(-50%, -50%);
-    color: white;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.presentation-overlay-loisir {
     pointer-events: none;
     text-align: left;
-    width: 90%; /* Ajuster la largeur de l'overlay */
-
-    .up-one {
-        grid-row-start: 1;
-        grid-row-end: 2;
-        grid-column-start: 1;
-        grid-column-end: 2;
-    }
-    .up-two {
-        grid-row-start: 1;
-        grid-row-end: 2;
-        grid-column-start: 3;
-        grid-column-end: 4;
-    }
-    .down-one {
-        grid-row-start: 2;
-        grid-row-end: 3;
-        grid-column-start: 2;
-        grid-column-end: 3;
-    }
-    .down-two {
-        grid-row-start: 2;
-        grid-row-end: 3;
-        grid-column-start: 4;
-        grid-column-end: 5;
-    }
 }
 
 .presentation-titrage-loisir {
-    position: absolute; /* Position overlay absolutely in relation to its container */
-    top: 11%;
-    left: 19%;
-    transform: translate(-50%, -50%); /* Adjust to make it perfectly centered */
-    color: white; /* Change color for visibility */
+    color: var(--color-secondary);
     text-align: left; /* Center the text */
     pointer-events: none; /* Disable interaction with the text */
 }
@@ -289,7 +263,7 @@ expertice
 responsif
 */
 
-.propos-grid {   
+.propos-grid {
     @media screen and (max-width: 1000px) {
         display: flex;
         flex-direction: column;
@@ -297,27 +271,24 @@ responsif
         padding: 5px;
     }
 }
-.presentation{
+.presentation {
     @media screen and (max-width: 1000px) {
-    height: 400px;
+        height: 400px;
         .presentation-overlay {
             width: 97%;
         }
         .presentation-titrage {
-            transform: translate(0 , 0);
+            transform: translate(0, 0);
             left: 1%;
             top: 1%;
-
-        
-        }     
+        }
     }
-    @media screen and (max-width: 600px){
-        .presentation-titrage{
+    @media screen and (max-width: 600px) {
+        .presentation-titrage {
             top: 3%;
-            h3{
+            h3 {
                 font-size: 16px;
             }
         }
     }
-    
 }

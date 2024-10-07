@@ -35,7 +35,7 @@
     top: 60%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for perfect centering */
-    color: var(--color-bg-secondary); /* Change text color for visibility */
+    color: var(--color-secondary); /* Change text color for visibility */
     width: 95%;
 }
 .text-overlay-top {
@@ -43,13 +43,12 @@
     top: -6%; /* Center vertically */
     left: 67%; /* Center horizontally */
     text-align: center; /* Center text */
-    color: var(--color-bg-secondary);
-    @media screen and (max-width: 620px){
+    color: var(--color-secondary);
+    @media screen and (max-width: 620px) {
         top: 1%;
-        h3{
+        h3 {
             margin: 0;
             font-size: 20px;
         }
-        
     }
 }
