@@ -6,6 +6,7 @@ import Accordion from './components/Accordion';
 import Forme from './components/Forme';
 import Backgrid from './components/backgrid';
 
+
 export default class ComponentFactory {
   constructor() {
     this.componentInstances = [];

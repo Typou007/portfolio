@@ -1,79 +1,50 @@
 export default class Backgrid {
     constructor(element) {
         this.element = element; // Stocke l'élément DOM du header
-        console.log("hel");
         this.init();
         
         }
         init(){
-const gridContainer = document.querySelector('.grid-container');
+            // Taille d'une case
+            const caseSize = 35;
 
-// Fonction pour générer la grille dynamiquement selon la taille de la fenêtre
-function createGrid() {
-    console.log("grid");
-    const containerWidth = window.innerWidth;
-    const containerHeight = window.innerHeight;
-    const squareSize = 20; // Taille d'un carré en pixels
+        // Créer des cases dynamiquement pour remplir l'écran
+        const background = document.getElementById('background');
+        const columns = Math.ceil(window.innerWidth / caseSize);
+        const rows = Math.ceil(window.innerHeight / caseSize);
 
-    const numColumns = Math.floor(containerWidth / squareSize);
-    const numRows = Math.floor(containerHeight / squareSize);
-
-    gridContainer.style.gridTemplateColumns = `repeat(${numColumns}, 1fr)`;
-    gridContainer.style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
-
-    for (let i = 0; i < numColumns * numRows; i++) {
-        const gridItem = document.createElement('div');
-        gridItem.classList.add('grid-item');
-        gridContainer.appendChild(gridItem);
-    }
-}
-
-// Fonction pour générer un entier aléatoire entre min et max
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-// Fonction pour changer la couleur des carrés environnants
-function changeSurroundingColors(index, columns) {
-    const items = document.querySelectorAll('.grid-item');
-    const positions = [
-        -columns - 1, -columns, -columns + 1,  // Carrés du dessus
-        -1, 1,                                // Carrés sur les côtés
-        columns - 1, columns, columns + 1     // Carrés du dessous
-    ];
-
-    for (let i = 0; i < 5; i++) {
-        const randomPosition = getRandomInt(0, positions.length - 1);
-        const neighborIndex = index + positions[randomPosition];
-
-        if (neighborIndex >= 0 && neighborIndex < items.length) {
-            items[neighborIndex].style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 70%)`;
+        function createCase(x, y) {
+            const div = document.createElement('div');
+            div.classList.add('case');
+            div.style.left = `${x * caseSize}px`;
+            div.style.top = `${y * caseSize}px`;
+            background.appendChild(div);
         }
-    }
-}
 
-// Ajoute l'événement 'mouseover' pour changer les couleurs
-gridContainer.addEventListener('mouseover', (event) => {
-    if (event.target.classList.contains('grid-item')) {
-        const items = Array.from(document.querySelectorAll('.grid-item'));
-        const index = items.indexOf(event.target);
-        const numColumns = Math.floor(window.innerWidth / 20);
+        // Remplir l'écran avec des cases
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < columns; j++) {
+                createCase(j, i);
+            }
+        }
 
-        // Réinitialiser les couleurs
-        items.forEach(item => item.style.backgroundColor = '#ccc');
+        // Écouteur global de la position de la souris
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
 
-        changeSurroundingColors(index, numColumns);
-    }
-});
+            // Calculer la case active en fonction de la position de la souris
+            const col = Math.floor(mouseX / caseSize);
+            const row = Math.floor(mouseY / caseSize);
 
-// Crée la grille au chargement de la page
-createGrid();
+            // Désactiver toutes les cases
+            document.querySelectorAll('.case').forEach(c => c.classList.remove('active'));
 
-// Ajuste la grille si la fenêtre est redimensionnée
-window.addEventListener('resize', () => {
-    gridContainer.innerHTML = ''; // Vide la grille
-    createGrid(); // Recrée la grille avec la nouvelle taille
-});
-
+            // Activer la case survolée
+            const activeCase = document.querySelector(`.case:nth-child(${(row * columns) + col + 1})`);
+            if (activeCase) {
+                activeCase.classList.add('active');
+            }
+        });
         }
 }
