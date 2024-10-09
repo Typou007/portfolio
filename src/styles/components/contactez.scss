@@ -24,12 +24,16 @@ svg {
 }
 
 .position {
-    top: 20%;
-    left: 10% !important;
-    width: 85% !important;
+    top: 24%;
+    left: 17% !important;
+    width: 75% !important;
 }
 .selection {
-    top: 30% !important;
+    
+    top: 42% !important;
+    @media screen and (max-width: 450px){
+        top: 33% !important; 
+    }
 }
 
 .formulaire {
@@ -106,6 +110,11 @@ svg {
     font-weight: 600;
     font-size: var(--font-size-p);
     font-family: var(--font-secondary);
+    
+    @media screen and (max-width: 600px){
+        font-size: 13px;
+    }
+    
 }
 .input__label_commentaire {
     display: block;

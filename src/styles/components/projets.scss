@@ -40,26 +40,118 @@
     top: -3%;
     left: 6%;
     z-index: 10;
+    @media screen and (max-width: 1000px){
+        top: 2%;
+        h3{
+            margin: 0;
+            font-size: 21px;
+        }
+    }
+    @media screen and (max-width: 600px){
+        h3{
+            font-size: 16px;
+        }
+        top: 3%;
+    }
+    @media screen and (max-width: 450px){
+        h3{
+            font-size: 11px;
+        }  
+    }
+
+
 }
 .projet2{
     position: absolute;
     top: -3%;
     left: 23%;
+    @media screen and (max-width: 1000px){
+        top: 2%;
+        h3{
+            margin: 0;
+            font-size: 21px;
+        }
+    }
+    @media screen and (max-width: 600px){
+        h3{
+            font-size: 16px;
+        }
+        top: 3%;
+    }
+    @media screen and (max-width: 450px){
+        h3{
+            font-size: 11px;
+        }  
+    }
 }
 .projet3{
     position: absolute;
     top: -3%;
     left: 41%;
+    @media screen and (max-width: 1000px){
+        top: 2%;
+        h3{
+            margin: 0;
+            font-size: 21px;
+        }
+    }
+    @media screen and (max-width: 600px){
+        h3{
+            font-size: 16px;
+        }
+        top: 3%;
+    }
+    @media screen and (max-width: 450px){
+        h3{
+            font-size: 11px;
+        }  
+    }
 }
 .projet4{
     position: absolute;
     top: -3%;
     left: 57%;
+    @media screen and (max-width: 1000px){
+        top: 2%;
+        h3{
+            margin: 0;
+            font-size: 21px;
+        }
+    }
+    @media screen and (max-width: 600px){
+        h3{
+            font-size: 16px;
+        }
+        top: 3%;
+    }
+    @media screen and (max-width: 450px){
+        h3{
+            font-size: 11px;
+        }  
+    }
 }
 .projet5{
     position: absolute;
     top: -3%;
     left: 75%;
+    @media screen and (max-width: 1000px){
+        top: 2%;
+        h3{
+            margin: 0;
+            font-size: 21px;
+        }
+    }
+    @media screen and (max-width: 600px){
+        h3{
+            font-size: 16px;
+        }
+        top: 3%;
+    }
+    @media screen and (max-width: 450px){
+        h3{
+            font-size: 11px;
+        }  
+    }
 }
 
 /* Classes dynamiques pour le contrôle visuel */
@@ -78,6 +170,10 @@
         top: 2%;
         left: 0;
         margin: 50px;
+        @media screen and (max-width: 600px) {
+            margin: 50px 5px; 
+        
+}
     }
 }
 .projet-info{
@@ -89,12 +185,20 @@
         height: 100%;        
    .txt{
     width: 100%;
+
+    p{
+        margin: 0;
+    }
    }
-   div{
+   .config{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     .etage{
         display: flex;
         gap: 16px;
-        max-height: 40%;
+        max-height: 60%;
         .arriere{
             position: relative;
             color: var(--color-secondary);
@@ -108,9 +212,11 @@
             }
         }    
     }
-    .btn {
+    
+        
         .btn-fond {
             position: relative;
+            height: 100%;
     
             .savoir {
                 display: flex;
@@ -124,6 +230,23 @@
                 align-items: center;
                 color: var(--color-thirt);
                 text-decoration: none;
+                
+                    font-family: var(--font-primary);
+                    font-size: var(--font-size-a);
+                    font-style: normal;
+                    font-weight: bolder;
+                    line-height: normal;
+                    @media screen and (max-width: 965px) {
+                        font-size: 14px;
+                    }
+                    @media screen and (max-width: 600px) {
+                        font-size: var(--font-size-a);
+                    }
+
+                    @media screen and (max-width: 420px) {
+                        font-size: 24px;
+                    }
+
                 &:hover div rect {
                     fill: #171616; /* Couleur que tu veux lors du hover */
                 }
@@ -140,9 +263,7 @@
             a:hover {
                 color: #171616;
             }
-        }
-    }
-    
+        }    
    }
     
  }
@@ -159,9 +280,22 @@
     h2{
         margin: 0;
         color: var(--color-secondary);
+        @media screen and (max-width: 435px){
+            font-size: 18px;
+        }
+        
     }
     h1{
         color: var(--color-primary);
+        @media screen and (max-width: 810px){
+            font-size: 32px;
+        }
+        @media screen and (max-width: 600px){
+            font-size: var(--font-size-h1);
+        }
+        @media screen and (max-width: 485px){
+            font-size: 23px;
+        }
     }
 }
 .affiche{
@@ -170,7 +304,16 @@
     display: grid ;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+
+    @media screen and (max-width: 600px) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
     .projet-titre{
+        margin: 5px 0;
         display: flex;
     grid-column-start: 1;
     grid-column-end: 3;
@@ -184,6 +327,9 @@
         grid-column-end: 3;
         grid-row-start: 2;
         grid-row-end: 5;
+        @media screen and (max-width: 600px){
+            width: 40%;
+        }
     }
     .projet-info{
         grid-column-start: 1;
