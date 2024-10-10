@@ -30,16 +30,16 @@ export default class Carousel {
   setOptions() {
     // Configure le nombre de slides affichées en fonction de la largeur de l'écran
     if ('split' in this.element.dataset) {
-      this.options.breakpoints = { 
-        768: { slidesPerView: 3 },
-        400: { slidesPerView: 2 } 
+      this.options.breakpoints = {
+        768: { slidesPerView: 2 },
+        400: { slidesPerView: 1 },
       };
     }
     // Active le mode autoplay avec une pause de 3 secondes entre chaque slide
     if ('autoplay' in this.element.dataset) {
       this.options.autoplay = {
         delay: 3000,
-        pauseOnMouseEnter: true, 
+        pauseOnMouseEnter: true,
         disableOnInteraction: true,
       };
     }
@@ -55,7 +55,8 @@ export default class Carousel {
     if ('slides' in this.element.dataset) {
       const slidesValue = this.element.dataset.slides;
       // Si la valeur est 'auto', configure le mode 'auto' de Swiper
-      const slidesPerView = slidesValue === 'auto' ? 'auto' : parseFloat(slidesValue);
+      const slidesPerView =
+        slidesValue === 'auto' ? 'auto' : parseFloat(slidesValue);
       // Met à jour le nombre de slides par vue avec la valeur de l'attribut data-slides
       this.options.slidesPerView = slidesPerView || this.options.slidesPerView;
     }

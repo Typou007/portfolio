@@ -21,11 +21,9 @@
     z-index: 1;
 }
 #projet2 {
-
     z-index: 2;
 }
 #projet3 {
-
     z-index: 3;
 }
 #projet4 {
@@ -35,122 +33,120 @@
     z-index: 5;
 }
 
-.projet1{
+.projet1 {
     position: absolute;
     top: -3%;
     left: 6%;
     z-index: 10;
-    @media screen and (max-width: 1000px){
+    @media screen and (max-width: 1000px) {
         top: 2%;
-        h3{
+        h3 {
             margin: 0;
             font-size: 21px;
         }
     }
-    @media screen and (max-width: 600px){
-        h3{
+    @media screen and (max-width: 600px) {
+        top: 3%;
+        h3 {
             font-size: 16px;
         }
-        top: 3%;
     }
-    @media screen and (max-width: 450px){
-        h3{
+    @media screen and (max-width: 450px) {
+        h3 {
             font-size: 11px;
-        }  
+        }
     }
-
-
 }
-.projet2{
+.projet2 {
     position: absolute;
     top: -3%;
     left: 23%;
-    @media screen and (max-width: 1000px){
+    @media screen and (max-width: 1000px) {
         top: 2%;
-        h3{
+        h3 {
             margin: 0;
             font-size: 21px;
         }
     }
-    @media screen and (max-width: 600px){
-        h3{
+    @media screen and (max-width: 600px) {
+        top: 3%;
+        h3 {
             font-size: 16px;
         }
-        top: 3%;
     }
-    @media screen and (max-width: 450px){
-        h3{
+    @media screen and (max-width: 450px) {
+        h3 {
             font-size: 11px;
-        }  
+        }
     }
 }
-.projet3{
+.projet3 {
     position: absolute;
     top: -3%;
     left: 41%;
-    @media screen and (max-width: 1000px){
+    @media screen and (max-width: 1000px) {
         top: 2%;
-        h3{
+        h3 {
             margin: 0;
             font-size: 21px;
         }
     }
-    @media screen and (max-width: 600px){
-        h3{
+    @media screen and (max-width: 600px) {
+        top: 3%;
+        h3 {
             font-size: 16px;
         }
-        top: 3%;
     }
-    @media screen and (max-width: 450px){
-        h3{
+    @media screen and (max-width: 450px) {
+        h3 {
             font-size: 11px;
-        }  
+        }
     }
 }
-.projet4{
+.projet4 {
     position: absolute;
     top: -3%;
     left: 57%;
-    @media screen and (max-width: 1000px){
+    @media screen and (max-width: 1000px) {
         top: 2%;
-        h3{
+        h3 {
             margin: 0;
             font-size: 21px;
         }
     }
-    @media screen and (max-width: 600px){
-        h3{
+    @media screen and (max-width: 600px) {
+        top: 3%;
+        h3 {
             font-size: 16px;
         }
-        top: 3%;
     }
-    @media screen and (max-width: 450px){
-        h3{
+    @media screen and (max-width: 450px) {
+        h3 {
             font-size: 11px;
-        }  
+        }
     }
 }
-.projet5{
+.projet5 {
     position: absolute;
     top: -3%;
     left: 75%;
-    @media screen and (max-width: 1000px){
+    @media screen and (max-width: 1000px) {
         top: 2%;
-        h3{
+        h3 {
             margin: 0;
             font-size: 21px;
         }
     }
-    @media screen and (max-width: 600px){
-        h3{
+    @media screen and (max-width: 600px) {
+        top: 3%;
+        h3 {
             font-size: 16px;
         }
-        top: 3%;
     }
-    @media screen and (max-width: 450px){
-        h3{
+    @media screen and (max-width: 450px) {
+        h3 {
             font-size: 11px;
-        }  
+        }
     }
 }
 
@@ -159,78 +155,76 @@
 .projet-container {
     position: relative;
     height: 100%;
-    
+
     svg {
         width: 100%;
         height: 100%;
         max-width: 100%;
     }
-    .affiche{
+    .affiche {
         position: absolute;
         top: 2%;
         left: 0;
         margin: 50px;
         @media screen and (max-width: 600px) {
-            margin: 50px 5px; 
-        
-}
+            margin: 50px 5px;
+        }
     }
 }
-.projet-info{
-    .entrepot{
+.projet-info {
+    .entrepot {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         max-height: 100%;
-        height: 100%;        
-   .txt{
-    width: 100%;
+        height: 100%;
+        .txt {
+            width: 100%;
 
-    p{
-        margin: 0;
-    }
-   }
-   .config{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    .etage{
-        display: flex;
-        gap: 16px;
-        max-height: 60%;
-        .arriere{
-            position: relative;
-            color: var(--color-secondary);
-                
-            .app{
-                position: absolute;
-                top: 45%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                height: 100%;    
+            p {
+                margin: 0;
             }
-        }    
-    }
-    
-        
-        .btn-fond {
-            position: relative;
-            height: 100%;
-    
-            .savoir {
+        }
+        .config {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            .etage {
                 display: flex;
-                position: absolute;
-                width: 80%;
+                gap: 16px;
+                max-height: 60%;
+                .arriere {
+                    position: relative;
+                    color: var(--color-secondary);
+
+                    .app {
+                        position: absolute;
+                        top: 45%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        height: 100%;
+                    }
+                }
+            }
+
+            .btn-fond {
+                position: relative;
                 height: 100%;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                justify-content: space-between;
-                align-items: center;
-                color: var(--color-thirt);
-                text-decoration: none;
-                
+
+                .savoir {
+                    display: flex;
+                    position: absolute;
+                    width: 80%;
+                    height: 100%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    justify-content: space-between;
+                    align-items: center;
+                    color: var(--color-thirt);
+                    text-decoration: none;
+
                     font-family: var(--font-primary);
                     font-size: var(--font-size-a);
                     font-style: normal;
@@ -247,61 +241,59 @@
                         font-size: 24px;
                     }
 
-                &:hover div rect {
-                    fill: #171616; /* Couleur que tu veux lors du hover */
+                    &:hover div rect {
+                        fill: #171616; /* Couleur que tu veux lors du hover */
+                    }
+                    &:hover div path {
+                        fill: #171616; /* Couleur que tu veux lors du hover */
+                    }
                 }
-                &:hover div path {
-                    fill: #171616; /* Couleur que tu veux lors du hover */
+
+                /* Changement de couleur du SVG lors du hover */
+                &:hover .svg-btn path {
+                    fill: #c6ff01; /* Couleur que tu veux lors du hover */
+                }
+
+                a:hover {
+                    color: #171616;
                 }
             }
-    
-            /* Changement de couleur du SVG lors du hover */
-            &:hover .svg-btn path {
-                fill: #C6FF01; /* Couleur que tu veux lors du hover */
-            }
-    
-            a:hover {
-                color: #171616;
-            }
-        }    
-   }
-    
- }
+        }
+    }
 }
-.projet-image{
-    img{
+.projet-image {
+    img {
         max-width: 100%;
         width: 100%;
         max-height: 100%;
         object-fit: cover;
     }
 }
-.projet-titre{
-    h2{
+.projet-titre {
+    h2 {
         margin: 0;
         color: var(--color-secondary);
-        @media screen and (max-width: 435px){
+        @media screen and (max-width: 435px) {
             font-size: 18px;
         }
-        
     }
-    h1{
+    h1 {
         color: var(--color-primary);
-        @media screen and (max-width: 810px){
+        @media screen and (max-width: 810px) {
             font-size: 32px;
         }
-        @media screen and (max-width: 600px){
+        @media screen and (max-width: 600px) {
             font-size: var(--font-size-h1);
         }
-        @media screen and (max-width: 485px){
+        @media screen and (max-width: 485px) {
             font-size: 23px;
         }
     }
 }
-.affiche{
+.affiche {
     max-height: 850px;
     height: 100%;
-    display: grid ;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
 
@@ -311,27 +303,26 @@
         flex-direction: column;
     }
 
-
-    .projet-titre{
+    .projet-titre {
         margin: 5px 0;
         display: flex;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    flex-direction: column;
-    justify-content: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        flex-direction: column;
+        justify-content: center;
     }
-    .projet-image{
+    .projet-image {
         grid-column-start: 2;
         grid-column-end: 3;
         grid-row-start: 2;
         grid-row-end: 5;
-        @media screen and (max-width: 600px){
+        @media screen and (max-width: 600px) {
             width: 40%;
         }
     }
-    .projet-info{
+    .projet-info {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 2;

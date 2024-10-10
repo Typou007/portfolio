@@ -29,10 +29,9 @@ svg {
     width: 75% !important;
 }
 .selection {
-    
     top: 42% !important;
-    @media screen and (max-width: 450px){
-        top: 33% !important; 
+    @media screen and (max-width: 450px) {
+        top: 33% !important;
     }
 }
 
@@ -90,7 +89,7 @@ svg {
 
 .form__confirmation {
     display: none;
-    h2{
+    h2 {
         color: var(--color-primary);
     }
 
@@ -110,11 +109,10 @@ svg {
     font-weight: 600;
     font-size: var(--font-size-p);
     font-family: var(--font-secondary);
-    
-    @media screen and (max-width: 600px){
+
+    @media screen and (max-width: 600px) {
         font-size: 13px;
     }
-    
 }
 .input__label_commentaire {
     display: block;
@@ -351,6 +349,7 @@ svg {
     justify-content: center;
     .arriere {
         position: relative;
+        color: var(--color-contrast);
         .appli {
             position: absolute;
             top: 50%;
