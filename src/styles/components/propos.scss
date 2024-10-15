@@ -63,52 +63,70 @@ présentation
         width: 100%;
         height: 100%; /* Assurez-vous que le conteneur prend toute la hauteur disponible */
         overflow: hidden;
-
-        svg {
-            top: 0;
-            left: 0;
-            width: 100%; /* Prendre toute la largeur du conteneur */
-            height: 100%; /* Prendre toute la hauteur également */
-            object-fit: cover; /* S'adapter au conteneur sans déformation */
-        }
-        path {
-            width: 100%; /* Prendre toute la largeur du conteneur */
-            height: 100%; /* Prendre toute la hauteur également */
-        }
     }
-    .contenu-presentation{
+
+    /* SVG et path */
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Contenu de la présentation */
+    .contenu-presentation {
         position: absolute;
-        transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
         width: 92%;
         height: 95%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
     }
-    .presentation-titrage {
 
-        color: white; /* Change color for visibility */
-        text-align: left; /* Center the text */
-        pointer-events: none; /* Disable interaction with the text */
-        h3 {
-            margin: 0;
-        }
+    /* Titre */
+    .presentation-titrage {
+        color: white;
+        text-align: left;
+        pointer-events: none;
     }
+
+    .presentation-titrage h3 {
+        margin: 0;
+    }
+
+    /* Overlay de la présentation (texte) */
     .presentation-overlay {
         color: white;
-        pointer-events: none;
         text-align: left;
-        width: 90%; /* Ajuster la largeur de l'overlay */
-        p{
-            font-size: 27px;  
-            @media screen and (max-width: 800px) {
-                font-size: 22px;
-            }
-            @media screen and (max-width: 600px) {
-                font-size: 18px;
-            }
+        flex-grow: 1; /* Prend l'espace vertical disponible */
+        margin: 10px 0;
+        display: flex; /* Utilisation de flexbox */
+        align-items: center; /* Centre verticalement le paragraphe */
+    }
+
+    .presentation-overlay p {
+        flex-grow: 1; /* Le paragraphe prend tout l'espace disponible */
+        margin: 0; /* Supprime les marges pour maximiser l'utilisation de l'espace */
+        font-size: 1.7rem;
+        line-height: 1.7;
+    }
+
+    /* Media queries */
+    @media screen and (max-width: 1000px) {
+        .presentation-overlay p {
+            font-size: 1.4rem;
+        }
+    }
+
+    @media screen and (max-width: 650px) {
+        .presentation-overlay p {
+            font-size: 1.1rem;
+        }
+    }
+    @media screen and (max-width: 420px) {
+        .presentation-overlay p {
+            font-size: 0.9rem;
         }
     }
 }
@@ -119,19 +137,29 @@ img
     display: flex;
     grid-column: span 2;
     margin: 0 10px;
-    div {
-        max-width: 462px;
-        width: 100%;
-        max-height: 650px;
-        height: auto;
+    @media screen and (max-width: 1000px){
+    width: 100%;
+    justify-content: center;
+    }
+    
 
-        img {
+    div {
+        display: flex;
+        max-width: 462px;
+        width: 99.9%;
+        max-height: 650px;
+        height: 100%;
+
+        .video {
             max-width: 462px;
             width: 100%;
             max-height: 650px;
-            height: auto;
+            height: 650px;
             border: 1px var(--color-primary) solid;
             object-fit: cover;
+            .youtube{
+                color: var(--color-bg-secondary);
+            }
         }
     }
 }
@@ -206,6 +234,11 @@ expertice
     height: 100%;
     width: 100%;
     grid-column: span 3; /* Prendre 3 colonnes */
+    @media screen and (max-width: 1000px) {
+        height: 400px;
+        width: 100%;
+    }
+    
 }
 .contenu-expertise{
     position: absolute;
@@ -217,6 +250,10 @@ expertice
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media screen and (max-width: 1000px) {
+       width: 90%;
+    }
+    
 }
 .expertise-container {
     width: 100%;
@@ -294,6 +331,7 @@ responsif
 .presentation {
     @media screen and (max-width: 1000px) {
         height: 400px;
+        width: 100%;
         .presentation-overlay {
             width: 97%;
         }
@@ -315,5 +353,8 @@ responsif
 .evaluation{
     @media screen and (max-width: 1000px){
         gap: 0;
+    }
+    @media screen and (max-width: 420px){
+        gap: 20px;
     }
 }

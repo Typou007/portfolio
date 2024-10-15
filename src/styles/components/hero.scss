@@ -40,12 +40,12 @@
 }
 .text-overlay-top {
     position: absolute; /* Absolute positioning to overlay the text */
-    top: -6%; /* Center vertically */
-    left: 67%; /* Center horizontally */
+    top: 2%;
+    left: 65%;
     text-align: center; /* Center text */
     color: var(--color-secondary);
     @media screen and (max-width: 620px) {
-        top: 1%;
+        top: 2%;
         h3 {
             margin: 0;
             font-size: 20px;

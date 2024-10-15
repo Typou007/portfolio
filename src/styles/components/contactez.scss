@@ -337,7 +337,16 @@ svg {
     color: var(--color-white);
 }
 .input__label_comentaire {
-    top: 5%;
+    top: 3%;
+    @media screen and (max-width: 800px) {
+        font-size: 13px;
+        top:2%;
+    }
+    @media screen and (max-width: 570px) {
+        font-size: 8px;
+        top:3%;
+    }
+    
 }
 .etage {
     height: 100%;
