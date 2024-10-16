@@ -62,9 +62,9 @@
     width: 74%;
     height: 98%;
     background-color: rgba(
-        181,
-        181,
-        181,
+        23,
+        21,
+        22,
         0.5
     ); /* noir avec une opacité de 0.3 */
     border: 2px solid var(--color-primary); /* bordure rouge de 1px */
@@ -91,6 +91,9 @@
         font-size: var(--font-size-s);
         margin: 0;
         color: var(--color-secondary);
+        @media screen and (max-width: 400px) {
+            font-size: 15px;
+        }
     }
     .date {
         font-family: var(--font-third);
@@ -106,5 +109,5 @@
 
 .card:hover .card-content {
     transform: translateY(0);
-    bottom: 11px;
+    bottom: 8px;
 }

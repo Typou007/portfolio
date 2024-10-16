@@ -90,10 +90,21 @@
     .univers-texte {
         position: absolute;
         top: 0;
-        padding: 10px;
+        margin: 10px;
         p {
-            margin: 0px;
+            margin: 10px 0;
         }
+        @media screen and (max-width: 1300px) {
+            p{
+               font-size: 16px; 
+            }
+        }
+        @media screen and (max-width: 540px) {
+            p{
+               font-size: 12px; 
+            }
+        }
+        
     }
     svg {
         top: 0;
@@ -103,13 +114,36 @@
         object-fit: cover;
     }
 }
+.etape-text{
+    .template{
+        img{
+            @media screen and (max-width: 950px) {
+                height: 300px;
+            }
+            @media screen and (max-width: 425px) {
+                height: 350px;
+            }
+        }
+    }
+}
 .resum {
     .resum-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 21px 56px;
+        
+        @media screen and (max-width: 1000px) {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 50px;
+        }
 
         .template {
+            @media screen and (max-width: 1000px) {
+               text-align: center;
+            }
+            
             .tex-up {
                 position: absolute;
                 top: 25%;
@@ -122,6 +156,10 @@
                     font-size: 25px;
                     padding-bottom: 15%;
                     color: var(--color-secondary);
+                    @media screen and (max-width: 550px) {
+                        font-size: 23px;
+                        padding-bottom: 11%;
+                     }
                 }
             }
             .tex {
@@ -131,6 +169,9 @@
                 padding: 50px;
                 width: 100%;
 
+                @media screen and (max-width: 550px) {
+                    padding: 0;
+                 }
                 ul {
                     padding-left: 10%;
                 }
@@ -138,6 +179,11 @@
                     font-size: 25px;
                     padding-bottom: 15%;
                     color: var(--color-secondary);
+                    @media screen and (max-width: 550px) {
+                        font-size: 23px;
+                        padding-bottom: 11%;
+                     }
+                    
                 }
             }
             .titrage-up {
@@ -164,6 +210,15 @@
             grid-column-end: 3;
             grid-row-start: 1;
             grid-row-end: 3;
+            .univers-texte{
+                p{
+                    @media screen and (max-width: 550px) {
+                font-size: 14px;
+             }
+            
+                }
+            }
+            
         }
     }
 }
@@ -171,7 +226,6 @@
     .univers-texte {
         position: absolute;
         top: 0;
-        padding: 10px;
         p {
             margin: 0px;
         }
@@ -194,23 +248,39 @@
 .etape-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    @media screen and (max-width: 1100px) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+    }
 }
 
 .ecriture {
     position: absolute;
     top: 0;
     padding: 10px;
+    margin: 10px;
+    h3{
+        color: var(--color-secondary);
+    }
+    @media screen and (max-width: 500px) {
+        p{
+            margin: 0;
+            font-size: 13px;
+        }
+        
+    }
 }
 
 .gauche {
-    p {
+        text-align: center;
         padding-right: 15%;
-    }
 }
 .droite {
-    p {
+        text-align: center;
         padding-left: 15%;
-    }
 }
 
 .video {

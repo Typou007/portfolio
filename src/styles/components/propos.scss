@@ -14,7 +14,7 @@ titre
     padding-top: 36.89%; /* Aspect ratio to maintain the height based on the original SVG (332 / 900 * 100) */
     height: 0;
     overflow: hidden;
-    svg {
+    img {
         position: absolute; /* Absolute to fill the container */
         top: 0;
         left: 0;
