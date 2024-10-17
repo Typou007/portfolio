@@ -2,17 +2,34 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-bottom: 50px;
+
+    @media screen and (max-width: 700px) {
+       display: flex;
+       flex-direction: column-reverse;
+    }
+}
+.intro .entrepot .txt p{
+    @media screen and (max-width: 900px) {
+        font-size: 17px; 
+ }
+ @media screen and (max-width: 700px) {
+    font-size: 22px; 
+}
+@media screen and (max-width: 540px) {
+    font-size: #{typo(14px, 22px)};
+}
+
 }
 .intro-text {
     position: relative;
     height: 100%;
+    width: 100%;
 
-    svg {
+    img {
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
     }
     .intro-affiche {
         position: absolute;
@@ -22,8 +39,24 @@
         margin: 0 1%;
         flex-direction: column;
         height: 80%;
+        justify-content: space-around;
         h2 {
-            font-size: #{typo(28px, 52px)};
+            font-size: #{typo(10px, 52px)};
+
+            @media screen and (max-width: 900px) {
+                   font-size: 17px; 
+            }
+            @media screen and (max-width: 700px) {
+                font-size: #{typo(19px, 52px)};
+         }
+        }
+        h1{
+            @media screen and (max-width: 900px) {
+                font-size: 21px; 
+         }
+         @media screen and (max-width: 700px) {
+             font-size: #{typo(22px, 77px)};
+      }
         }
     }
     .projet-info {
@@ -90,7 +123,7 @@
     .univers-texte {
         position: absolute;
         top: 0;
-        margin: 10px;
+        margin: 5px;
         p {
             margin: 10px 0;
         }
@@ -101,7 +134,7 @@
         }
         @media screen and (max-width: 540px) {
             p{
-               font-size: 12px; 
+               font-size: 13px; 
             }
         }
         
@@ -281,6 +314,10 @@
 .droite {
         text-align: center;
         padding-left: 15%;
+}
+.haut{
+    text-align: center;
+    padding-top: 5%;
 }
 
 .video {

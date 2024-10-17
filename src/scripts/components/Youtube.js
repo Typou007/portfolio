@@ -7,8 +7,11 @@ export default class Youtube {
     this.youtubeContainer = this.element.querySelector('.js-youtube');
     this.poster = this.element.querySelector('.js-poster');
     this.youtubeId = this.element.dataset.youtubeId;
-    // Détermine si la lecture automatique est activée en fonction de la présence d'un poster
-    this.autoplay = this.poster ? 1 : 0;
+
+    // Détermine si la lecture automatique est activée en fonction de la présence de 'data-action'
+    this.actionPlay = this.element.hasAttribute('data-action');
+    this.autoplay = this.actionPlay ? 1 : 0;
+
     this.playerReady = false;
 
     // Ajoute cette instance à la liste des instances de Youtube
@@ -18,13 +21,14 @@ export default class Youtube {
     if (this.youtubeId) {
       Youtube.loadScript();
     } else {
-      console.error('vous devez spécifier un id');
+      console.error('Vous devez spécifier un ID de vidéo YouTube.');
     }
 
     // Options par défaut pour la vidéo YouTube
     this.options = {
       rel: 1, // Affiche les vidéos suggérées à la fin de la lecture
       controls: 1, // Affiche les contrôles de lecture
+      autoplay: this.autoplay, // Lecture automatique si 'data-action' est présent
     };
   }
 
@@ -43,11 +47,12 @@ export default class Youtube {
   init() {
     this.initPlayer = this.initPlayer.bind(this);
 
-    // Initialise le lecteur lorsque l'utilisateur clique sur le poster ou automatiquement si aucun poster n'est présent
-    if (this.poster) {
+    // Si 'data-action' est présent, on lance la vidéo automatiquement
+    if (this.actionPlay) {
+      this.initPlayer(); // Démarre immédiatement si l'attribut 'data-action' est présent
+    } else if (this.poster) {
+      // Si un poster est présent, clique sur le poster pour lancer la vidéo
       this.element.addEventListener('click', this.initPlayer);
-    } else {
-      this.initPlayer();
     }
 
     this.setOptions(); // Configure les options en fonction des attributs data
@@ -66,26 +71,43 @@ export default class Youtube {
       videoId: this.youtubeId, // ID de la vidéo YouTube à lire
       playerVars: {
         rel: this.options.rel, // Paramètre de suggestion de vidéos similaires
-        autoplay: this.autoplay, // Lecture automatique
+        autoplay: 1, // Forcer la lecture automatique pour 'data-action'
         controls: this.options.controls, // Affichage des contrôles de lecture
+        mute: this.actionPlay ? 1 : 0, // Muter uniquement les vidéos avec 'data-action'
       },
       events: {
-        // Gère les événements du lecteur vidéo YouTube
         onReady: () => {
           this.playerReady = true;
 
-          // Initialise un observateur d'intersection pour la lecture automatique
+          // Si la vidéo doit démarrer automatiquement avec 'data-action'
+          if (this.actionPlay) {
+            console.log('Lecture automatique de la vidéo avec data-action.');
+            this.player.playVideo(); // Démarre la vidéo
+            // Démute après un délai de 100ms
+            setTimeout(() => {
+              this.player.unMute();
+              console.log('Son réactivé après 100ms.');
+            }, 100);
+          }
+
+          // Si un poster est présent et la vidéo n'est pas 'data-action'
+          if (this.poster) {
+            this.poster.style.display = 'none'; // Cache le poster
+          }
+
+          // Observateur pour pause/lecture selon la visibilité
           const observer = new IntersectionObserver(this.watch.bind(this), {
             rootMargin: '0px 0px 0px 0px', // Marge de la racine pour l'intersection
           });
           observer.observe(this.element);
         },
         onStateChange: (event) => {
-          // Met en pause les autres vidéos lorsqu'une vidéo commence à être lue
           if (event.data == YT.PlayerState.PLAYING) {
-            Youtube.pauseAll(this);
+            this.element.style.zIndex = 2;  // Appliquer sur .youtube (élément parent)
+            Youtube.pauseAll(this); // Mettre en pause les autres vidéos
+          } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+            this.element.style.zIndex = 0;  // Appliquer sur .youtube (élément parent)
           }
-          // Ramène la lecture au début et met en pause la vidéo lorsque celle-ci se termine
           else if (event.data == YT.PlayerState.ENDED) {
             this.player.seekTo(0);
             this.player.pauseVideo();

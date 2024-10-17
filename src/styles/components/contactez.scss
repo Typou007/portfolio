@@ -192,7 +192,6 @@ svg {
     &::after {
         --size: 120px;
         content: '';
-        background: url('/src/assets/icons/flechebas.svg') no-repeat 50% 50%;
         background-size: 100%;
         height: var(--size);
         position: absolute;
