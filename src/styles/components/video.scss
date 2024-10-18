@@ -10,6 +10,14 @@
     padding-bottom: 40%;
     position: relative;
     border-radius: 15px;
+    @media screen and (max-width: 1000px) {
+        padding-bottom: 55%;
+    }
+
+    @media screen and (max-width: 600px) {
+        padding-bottom: 100%;
+    }
+    
 
     img {
         object-fit: cover;

@@ -29,6 +29,7 @@ export default class Youtube {
       rel: 1, // Affiche les vidéos suggérées à la fin de la lecture
       controls: 1, // Affiche les contrôles de lecture
       autoplay: this.autoplay, // Lecture automatique si 'data-action' est présent
+      loop: 1, // Permet de jouer la vidéo en boucle
     };
   }
 
@@ -74,6 +75,8 @@ export default class Youtube {
         autoplay: 1, // Forcer la lecture automatique pour 'data-action'
         controls: this.options.controls, // Affichage des contrôles de lecture
         mute: this.actionPlay ? 1 : 0, // Muter uniquement les vidéos avec 'data-action'
+        loop: this.actionPlay ? 1 : 0, // Activer la boucle uniquement pour 'data-action'
+        playlist: this.youtubeId, // Nécessaire pour activer la boucle avec l'API YouTube
       },
       events: {
         onReady: () => {
@@ -81,13 +84,8 @@ export default class Youtube {
 
           // Si la vidéo doit démarrer automatiquement avec 'data-action'
           if (this.actionPlay) {
-            console.log('Lecture automatique de la vidéo avec data-action.');
-            this.player.playVideo(); // Démarre la vidéo
-            // Démute après un délai de 100ms
-            setTimeout(() => {
-              this.player.unMute();
-              console.log('Son réactivé après 100ms.');
-            }, 100);
+            console.log('Lecture automatique de la vidéo avec data-action en mode muet, avec boucle activée.');
+            this.player.playVideo(); // Démarre la vidéo en sourdine
           }
 
           // Si un poster est présent et la vidéo n'est pas 'data-action'
@@ -107,10 +105,6 @@ export default class Youtube {
             Youtube.pauseAll(this); // Mettre en pause les autres vidéos
           } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
             this.element.style.zIndex = 0;  // Appliquer sur .youtube (élément parent)
-          }
-          else if (event.data == YT.PlayerState.ENDED) {
-            this.player.seekTo(0);
-            this.player.pauseVideo();
           }
         },
       },
