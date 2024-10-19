@@ -78,7 +78,7 @@ présentation
         left: 50%;
         transform: translate(-50%, -50%);
         width: 92%;
-        height: 95%;
+        height: 94%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -89,6 +89,9 @@ présentation
         color: white;
         text-align: left;
         pointer-events: none;
+        h3{
+            font-size: 25px;
+        }
     }
 
     .presentation-titrage h3 {
@@ -211,7 +214,7 @@ loisir
     top: 50%;
     left: 50%;
     width: 90%;
-    height: 100%;
+    height: 95%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -246,7 +249,7 @@ expertice
     top: 50%;
     left: 50%;
     width: 90%;
-    height: 90%;
+    height: 95%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -274,6 +277,10 @@ expertice
     width: 90%; /* Ajuster la largeur de l'overlay */
     h3{
         margin: 0;
+        @media screen and (max-width: 450px) {
+            font-size: 24px;
+         }
+
     }
 }
 .expertise-overlay-expert {
@@ -329,6 +336,7 @@ responsif
     }
 }
 .presentation {
+
     @media screen and (max-width: 1000px) {
         height: 400px;
         width: 100%;
@@ -339,13 +347,17 @@ responsif
             transform: translate(0, 0);
             left: 1%;
             top: 1%;
+            h3 {
+                font-size: 23px;
+            }
+            
         }
     }
     @media screen and (max-width: 600px) {
         .presentation-titrage {
             top: 3%;
             h3 {
-                font-size: 16px;
+                font-size: 13px;
             }
         }
     }

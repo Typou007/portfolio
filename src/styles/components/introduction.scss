@@ -9,8 +9,8 @@
     }
 }
 .intro .entrepot .txt p{
-    @media screen and (max-width: 900px) {
-        font-size: 17px; 
+    @media screen and (max-width: 910px) {
+        font-size: 16px; 
  }
  @media screen and (max-width: 700px) {
     font-size: 22px; 
@@ -36,18 +36,18 @@
         display: flex;
         bottom: 4%;
         left: 0;
-        margin: 0 1%;
+        margin: 0 10px;
         flex-direction: column;
         height: 80%;
         justify-content: space-around;
         h2 {
-            font-size: #{typo(10px, 52px)};
+            font-size: #{typo(2px, 50px)};
 
             @media screen and (max-width: 900px) {
-                   font-size: 17px; 
+                   font-size: 13px; 
             }
             @media screen and (max-width: 700px) {
-                font-size: #{typo(19px, 52px)};
+                font-size: #{typo(13px, 52px)};
          }
         }
         h1{
@@ -129,7 +129,7 @@
         }
         @media screen and (max-width: 1300px) {
             p{
-               font-size: 16px; 
+               font-size: 15px; 
             }
         }
         @media screen and (max-width: 540px) {
@@ -264,9 +264,7 @@
         }
     }
 }
-.texte-etape {
-    top: 11% !important;
-}
+
 
 .full-flex {
     display: flex;
@@ -313,11 +311,21 @@
 }
 .droite {
         text-align: center;
-        padding-left: 15%;
+        padding-left: 14%;
 }
 .haut{
     text-align: center;
-    padding-top: 5%;
+    padding-top: 3%;
+    @media screen and (max-width: 950px) {
+        padding-top: 7%;      
+     }
+     @media screen and (max-width: 540px) {
+        padding-top: 9%;      
+     }
+     @media screen and (max-width: 420px) {
+        padding-top: 14%;      
+     }
+    
 }
 
 .video {

@@ -10,6 +10,7 @@
     padding-bottom: 40%;
     position: relative;
     border-radius: 15px;
+
     @media screen and (max-width: 1000px) {
         padding-bottom: 55%;
     }
@@ -83,4 +84,8 @@
 
 .youtube__media {
     @include cover();
+}
+
+.content{
+    margin-bottom: 50px
 }

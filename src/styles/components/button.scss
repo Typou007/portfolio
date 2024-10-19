@@ -25,6 +25,7 @@ button{
     transform: translate(-50%, -50%); // Adjust to make it perfectly centered 
     font-size: var(--font-size-a);
     font-family: var(--font-primary);
+    cursor: pointer;
     @media screen and (max-width: 730px) {
         font-size: 18px;
     }
@@ -61,8 +62,10 @@ button{
 }
 
 .button:hover {
+    
     background-color: var(
         --color-primary
+        
     ); //Changement de couleur au survol 
     color: var(--color-white);
     a {

@@ -28,7 +28,6 @@ export default class ComponentFactory {
     for (let i = 0; i < components.length; i++) {
       const element = components[i];
       const componentName = element.dataset.component;
-      console.log(componentName)
 
       if (this.componentList[componentName]) {
         const instance = new this.componentList[componentName](element);

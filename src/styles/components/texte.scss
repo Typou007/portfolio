@@ -8,15 +8,18 @@ h1{
 }
 h2{ 
     font-size: var(--font-size-h2); 
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 9.75px;
     
 }
+.contraire{
+    font-family: var(--font-primary)!important; 
+}
 h3{
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--font-size-h3);
     font-style: normal;
     font-weight: bold;
