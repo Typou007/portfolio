@@ -393,3 +393,94 @@ svg {
         }
     }
 }
+/*
+form
+*/
+
+/* Style de base pour l'enveloppe principale du formulaire */
+.gform_wrapper {
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px var(--color-primary) solid
+}
+
+/* Style pour les champs d'entrée (text, email, etc.) */
+.gform_wrapper input[type="text"],
+.gform_wrapper input[type="email"],
+.gform_wrapper textarea,
+.gform_wrapper select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Style pour les étiquettes (labels) */
+.gform_wrapper .gfield_label {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-secondary);
+    margin-bottom: 5px;
+}
+
+/* Style pour les boutons */
+.gform_wrapper .gform_footer input[type="submit"] {
+    background-color: #769703;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Survol des boutons */
+.gform_wrapper .gform_footer input[type="submit"]:hover {
+    background-color: #5c7c02;
+}
+
+/* Style spécifique pour l'enveloppe des champs (champs groupés dans un SVG) */
+.gform_wrapper .form-container {
+    position: relative;
+    padding: 20px;
+}
+
+/* SVG styling */
+.gform_wrapper .form-container svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Classe personnalisée pour les champs spécifiques */
+.gform_wrapper .gfield.custom-field {
+    background-color: #B5B5B5;
+    border: 2px solid #769703;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Autres ajustements spécifiques à votre design */
+.input__label_comentaire {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.gform-field-label{
+    color: var(--color-secondary);
+}
+.gform_wrapper .validation_error {
+    color: red;
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+}
+.gform_confirmation_message_2{
+    color: var(--color-secondary);
+}

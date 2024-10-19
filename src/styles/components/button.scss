@@ -108,4 +108,20 @@ button{
     }
 }
 
-
+.produit {
+    position: relative;
+    z-index: 10; /* Assure que le produit est bien au-dessus */
+}
+.produit {
+    transition: stroke 0.3s ease; /* Ajoute une transition douce lors du changement de couleur */
+    &:hover svg path {
+        stroke: #c6ff01;
+        filter: drop-shadow(0px 0px 2px #C6FF01);
+    }
+    
+}
+.visuel:hover .logiciel .icon {
+    fill: var(--color-primary); /* Change la couleur de l'icône SVG au survol à rouge */
+    stroke: var(--color-primary); /* Change la couleur du contour de l'icône SVG au survol à rouge (si applicable) */
+    transition: fill 0.3s ease, stroke 0.3s ease; /* Transition douce pour le changement de couleur */
+}

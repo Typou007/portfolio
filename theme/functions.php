@@ -103,6 +103,39 @@ function custom_post_type_projets() {
 }
 add_action( 'init', 'custom_post_type_projets', 0 );
 
+// Enregistrement du CPT "Réalisation"
+function create_realisation_cpt() {
+    $labels = array(
+        'name' => 'Réalisations',
+        'singular_name' => 'Réalisation',
+        'menu_name' => 'Réalisations',
+        'name_admin_bar' => 'Réalisation',
+        'add_new' => 'Ajouter une nouvelle',
+        'add_new_item' => 'Ajouter une nouvelle réalisation',
+        'new_item' => 'Nouvelle réalisation',
+        'edit_item' => 'Modifier la réalisation',
+        'view_item' => 'Voir la réalisation',
+        'all_items' => 'Toutes les réalisations',
+        'search_items' => 'Rechercher des réalisations',
+        'not_found' => 'Aucune réalisation trouvée.',
+        'not_found_in_trash' => 'Aucune réalisation dans la corbeille.',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,  // Active les archives
+        'rewrite' => array('slug' => 'realisation'),  // Le slug des URL des réalisations
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'menu_icon' => 'dashicons-portfolio',  // Dashicon personnalisé
+    );
+
+    register_post_type('realisation', $args);
+}
+
+add_action('init', 'create_realisation_cpt');
+
+
 
 
 

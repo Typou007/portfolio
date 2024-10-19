@@ -2,7 +2,7 @@
     <div class="footer-container">
         <div class="footer_info">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-                        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/logo.png" alt="un A et un B qui sont fusionnés">
+                        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/logo_footer.png" alt="un A et un B qui sont fusionnés">
                     </a>
                 <div class="separateur">
                     <div class="one">
