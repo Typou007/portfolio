@@ -15,8 +15,21 @@
  @media screen and (max-width: 700px) {
     font-size: 22px; 
 }
-@media screen and (max-width: 540px) {
-    font-size: #{typo(14px, 22px)};
+@media screen and (max-width: 613px) {
+    font-size: 20px;
+}
+@media screen and (max-width: 613px) {
+    font-size: 20px;
+}
+@media screen and (max-width: 561px) {
+    font-size: 17px;
+}
+
+@media screen and (max-width: 482px) {
+    font-size: 14px;
+}
+@media screen and (max-width: 404px) {
+    font-size: 12px;
 }
 
 }
@@ -132,9 +145,14 @@
                font-size: 15px; 
             }
         }
-        @media screen and (max-width: 540px) {
+        @media screen and (max-width: 676px) {
             p{
-               font-size: 13px; 
+               font-size: 14px; 
+            }
+        }
+        @media screen and (max-width: 580px) {
+            p{
+               font-size: 12px; //défi et méthodologie
             }
         }
         
@@ -296,12 +314,51 @@
     h3{
         color: var(--color-secondary);
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 1400px) {
         p{
-            margin: 0;
-            font-size: 13px;
+            font-size: 15px;
+        }
+    }
+    @media screen and (max-width: 1100px) {
+        p{
+            font-size: 25px;
         }
         
+    }
+    @media screen and (max-width: 652px) {
+        p{
+            font-size: 23px;
+        }
+    }
+    @media screen and (max-width: 610px) {
+        p{
+            font-size: 20px;
+        }
+    }
+    @media screen and (max-width: 544px) {
+        p{
+            font-size: 18px;
+        }  
+    } 
+    @media screen and (max-width: 520px) {
+        p{
+            font-size: 17px;
+        }  
+    }
+    @media screen and (max-width: 476px) {
+        p{
+            font-size: 15px;
+        }
+    }
+    @media screen and (max-width: 434px) {
+        p{
+            font-size: 14px;
+        }
+    }
+    @media screen and (max-width: 413px) {
+        p{
+            font-size: 12px;
+        }
     }
 }
 
@@ -331,4 +388,7 @@
 .video {
     border: 5px #769703 solid;
     border-radius: 3px;
+}
+.images{
+    object-fit: cover;
 }

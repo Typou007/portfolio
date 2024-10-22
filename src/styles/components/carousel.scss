@@ -91,8 +91,20 @@
         font-size: var(--font-size-s);
         margin: 0;
         color: var(--color-secondary);
+        @media screen and (max-width: 910px) {
+            font-size: 14px;
+        }
+        @media screen and (max-width: 800px) {
+            font-size: 12px;
+        }
+        @media screen and (max-width: 768px) {
+            font-size: var(--font-size-s);
+        }
+        @media screen and (max-width: 454px) {
+            font-size: 13px;
+        }
         @media screen and (max-width: 400px) {
-            font-size: 15px;
+            font-size: 12px;
         }
     }
     .date {

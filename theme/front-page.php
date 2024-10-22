@@ -8,7 +8,7 @@ get_header(); ?>
         <div class="img_hero">
             <div>
                 <div >
-                    <div class="youtube" data-component="Youtube" data-youtube-id="vePZGWlMskc" data-action>
+                    <div class="youtube" data-component="Youtube" data-youtube-id="LkmanaLtXTQ" data-action>
                         <div class="youtube__media js-youtube">
                             <svg class="icon icon--xl">
                                 <use xlink:href="#icon-play"></use>
@@ -67,7 +67,7 @@ get_header(); ?>
             <div class="img" data-scrolly="fromRight">
                 <div>
                     <div class="video">
-                        <div class="youtube" data-component="Youtube" data-youtube-id="vePZGWlMskc" data-no-rel>
+                        <div class="youtube" data-component="Youtube" data-youtube-id="JgAi-1UsXrU" data-no-rel>
                             <div class="youtube__media js-youtube">
                                 <img class="moi js-poster" src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/moi_italien.jpg" alt="Image principale de la section Moi" />
                                 <svg class="icon icon--xl">
