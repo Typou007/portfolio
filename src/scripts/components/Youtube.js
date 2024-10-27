@@ -9,7 +9,7 @@ export default class Youtube {
     this.youtubeId = this.element.dataset.youtubeId;
 
     // Détermine si la lecture automatique est activée en fonction de la présence de 'data-action'
-    this.actionPlay = this.element.hasAttribute('data-action');
+    this.actionPlay = this.element.dataset.action !== undefined;
     this.autoplay = this.actionPlay ? 1 : 0;
 
     this.playerReady = false;
@@ -29,7 +29,7 @@ export default class Youtube {
       rel: 1, // Affiche les vidéos suggérées à la fin de la lecture
       controls: 1, // Affiche les contrôles de lecture
       autoplay: this.autoplay, // Lecture automatique si 'data-action' est présent
-      loop: 1, // Permet de jouer la vidéo en boucle
+      loop: 0, // Désactive la boucle par défaut
     };
   }
 
@@ -46,6 +46,8 @@ export default class Youtube {
 
   // Initialise la vidéo YouTube et configure les options
   init() {
+    this.setOptions(); // Configure les options en fonction des attributs data
+
     this.initPlayer = this.initPlayer.bind(this);
 
     // Si 'data-action' est présent, on lance la vidéo automatiquement
@@ -55,8 +57,6 @@ export default class Youtube {
       // Si un poster est présent, clique sur le poster pour lancer la vidéo
       this.element.addEventListener('click', this.initPlayer);
     }
-
-    this.setOptions(); // Configure les options en fonction des attributs data
   }
 
   // Initialise le lecteur vidéo YouTube
@@ -75,7 +75,7 @@ export default class Youtube {
         autoplay: 1, // Forcer la lecture automatique pour 'data-action'
         controls: this.options.controls, // Affichage des contrôles de lecture
         mute: this.actionPlay ? 1 : 0, // Muter uniquement les vidéos avec 'data-action'
-        loop: this.actionPlay ? 1 : 0, // Activer la boucle uniquement pour 'data-action'
+        loop: this.options.loop, // Activer ou non la boucle
         playlist: this.youtubeId, // Nécessaire pour activer la boucle avec l'API YouTube
       },
       events: {
@@ -118,6 +118,22 @@ export default class Youtube {
     }
   }
 
+  // Configure les options du lecteur vidéo en fonction des attributs data
+  setOptions() {
+    if ('noControls' in this.element.dataset) {
+      this.options.controls = 0; // Désactive les contrôles de lecture si 'data-no-controls' est présent
+    }
+    if ('noRel' in this.element.dataset) {
+      this.options.rel = 0; // Désactive les suggestions de vidéos similaires si 'data-no-rel' est présent
+    }
+    if ('loop' in this.element.dataset) {
+      this.options.loop = 1; // Active la boucle si 'data-loop' est présent
+    }
+    if ('autoplay' in this.element.dataset) {
+      this.options.autoplay = 1; // Active la lecture automatique si 'data-autoplay' est présent
+    }
+  }
+
   // Initialise toutes les instances de vidéos YouTube lorsque l'API YouTube est prête
   static initAll() {
     document.documentElement.classList.add('is-youtube-ready');
@@ -135,16 +151,6 @@ export default class Youtube {
       if (instance.playerReady && instance !== currentInstance) {
         instance.player.pauseVideo();
       }
-    }
-  }
-
-  // Configure les options du lecteur vidéo en fonction des attributs data
-  setOptions() {
-    if ('noControls' in this.element.dataset) {
-      this.options.controls = 0; // Désactive les contrôles de lecture
-    }
-    if ('noRel' in this.element.dataset) {
-      this.options.rel = 0; // Désactive les suggestions de vidéos similaires
     }
   }
 }

@@ -20,7 +20,7 @@
     <div data-component="Backgrid" id="background"></div>
     
     <!-- Zone header -->
-    <header class="header" data-component="Header" data-threshold="10" data-auto-hide="true">
+    <header class="header" data-component="Header" data-threshold="1" data-auto-hide="true">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="header__brand">
                 <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/logo.png" alt="un A et un B qui sont fusionnés">
             </a>

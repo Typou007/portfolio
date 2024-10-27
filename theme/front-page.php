@@ -8,7 +8,7 @@ get_header(); ?>
         <div class="img_hero">
             <div>
                 <div >
-                    <div class="youtube" data-component="Youtube" data-youtube-id="LkmanaLtXTQ" data-action>
+                    <div class="youtube" data-component="Youtube" data-youtube-id="2HPfuZgNCgA" data-action data-loop data-no-controls>
                         <div class="youtube__media js-youtube">
                             <svg class="icon icon--xl">
                                 <use xlink:href="#icon-play"></use>
@@ -67,7 +67,7 @@ get_header(); ?>
             <div class="img" data-scrolly="fromRight">
                 <div>
                     <div class="video">
-                        <div class="youtube" data-component="Youtube" data-youtube-id="JgAi-1UsXrU" data-no-rel>
+                        <div class="youtube" data-component="Youtube" data-youtube-id="fsZycKPhy7Y" data-no-rel>
                             <div class="youtube__media js-youtube">
                                 <img class="moi js-poster" src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/moi_italien.jpg" alt="Image principale de la section Moi" />
                                 <svg class="icon icon--xl">
@@ -275,7 +275,7 @@ get_header(); ?>
 
 
     <section id="contact" class="contact">
-        <div class="title" data-scrolly="fromBigSmall">
+        <div class="title">
             <div class="titre-svg-container">
                 <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/svg/title.svg" alt="">
             </div>
@@ -284,39 +284,29 @@ get_header(); ?>
             </div>
         </div>
         <div class="u-grid-fullwitdh">
-                                <div class="etage">
-                                    <a class="arriere" href="https://www.linkedin.com/in/antoine-breton-823655329/">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="166" height="191" viewBox="0 0 166 191" fill="none">
-                                            <path d="M2.2111 48.5656L82.8769 1.73446L163.543 48.5656V142.242L82.8769 189.074L2.2111 142.242V48.5656Z" fill="#B5B5B5" fill-opacity="0.6" stroke="#25113E" stroke-width="3"/>
-                                        </svg>
-                                        <div class="appli">
-                                            <svg class="icon icon-xl">
-                                                <use xlink:href="#icon-linkedin"></use>
-                                            </svg>
-                                        </div>
-                                    </a>
-                                    <a class="arriere" href="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="166" height="191" viewBox="0 0 166 191" fill="none">
-                                            <path d="M2.2111 48.5656L82.8769 1.73446L163.543 48.5656V142.242L82.8769 189.074L2.2111 142.242V48.5656Z" fill="#B5B5B5" fill-opacity="0.6" stroke="#25113E" stroke-width="3"/>
-                                          </svg>
-                                        <div class="appli">
-                                            <svg class="icon icon-xl">
-                                                <use xlink:href="#icon-cv"></use>
-                                            </svg>
-                                        </div>
-                                    </a>
-                                    <a class="arriere" href="https://github.com/Typou007">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="166" height="191" viewBox="0 0 166 191" fill="none">
-                                            <path d="M2.2111 48.5656L82.8769 1.73446L163.543 48.5656V142.242L82.8769 189.074L2.2111 142.242V48.5656Z" fill="#B5B5B5" fill-opacity="0.6" stroke="#25113E" stroke-width="3"/>
-                                          </svg>
-                                        <div class="appli">
-                                            <svg class="icon icon-xl icon--stroke">
-                                                <use xlink:href="#icon-github"></use>
-                                            </svg>
-                                        </div>
-                                    </a> 
-                                    
-                                </div>
+            <div class="etage">
+                <a class="arriere" href="mailto:bretonantoine3@gmail.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="166" height="191" viewBox="0 0 166 191" fill="none">
+                        <path d="M2.2111 48.5656L82.8769 1.73446L163.543 48.5656V142.242L82.8769 189.074L2.2111 142.242V48.5656Z" fill="#B5B5B5" fill-opacity="0.6" stroke="#25113E" stroke-width="3" />
+                    </svg>
+                    <div class="appli">
+                        <svg class="icon icon-xl">
+                            <use xlink:href="#icon-email"></use>
+                        </svg>
+                    </div>
+                </a>
+                <a class="arriere" href="./wp-content/themes/theme/dist/assets/pdf/document_pdf_test.pdf" download="Breton_Antoine_CV.pdf">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="166" height="191" viewBox="0 0 166 191" fill="none">
+                        <path d="M2.2111 48.5656L82.8769 1.73446L163.543 48.5656V142.242L82.8769 189.074L2.2111 142.242V48.5656Z" fill="#B5B5B5" fill-opacity="0.6" stroke="#25113E" stroke-width="3" />
+                    </svg>
+                    <div class="appli">
+                        <svg class="icon icon-xl">
+                            <use xlink:href="#icon-cv"></use>
+                        </svg>
+                    </div>
+                </a>
+
+            </div>
         </div>
            
         <section class="formulaire">

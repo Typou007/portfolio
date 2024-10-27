@@ -263,9 +263,37 @@
             grid-row-end: 3;
             .univers-texte{
                 p{
-                    @media screen and (max-width: 550px) {
-                font-size: 14px;
-             }
+                    font-size: 25px !important;  
+                    @media screen and (max-width: 1300px) {
+                       
+                            font-size: var(--font-size-p)!important;
+                        
+                    }
+                    @media screen and (max-width: 1000px) {
+                        
+                           font-size: 24px !important; 
+                        
+                    }
+                    @media screen and (max-width: 580px) {
+                        
+                           font-size: 21px !important; //défi et méthodologie
+                        
+                    }
+                    @media screen and (max-width: 500px) {
+                        
+                           font-size: 17px !important; //défi et méthodologie
+                        
+                    }
+                    @media screen and (max-width: 430px) {
+                        
+                           font-size: 15px !important; //défi et méthodologie
+                        
+                    }
+                    @media screen and (max-width: 400px) {
+                       
+                           font-size: 14px !important; //défi et méthodologie
+                        
+                    }
             
                 }
             }
@@ -390,5 +418,8 @@
     border-radius: 3px;
 }
 .images{
-    object-fit: cover;
+    img{
+        object-fit: cover;
+    }
+    
 }
