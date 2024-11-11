@@ -7,13 +7,14 @@ export default class Header {
     };
     this.scrollPosition = 0; // Initialise la position de défilement actuelle à 0
     this.lastScrollPosition = 0; // Initialise la dernière position de défilement à 0
+    this.navClickHandler = null; // Initialise la fonction de gestion du clic pour les liens de navigation
     this.init(); // Initialise les fonctionnalités du header
     this.initNavMobile(); // Initialise le menu de navigation mobile
     this.html = document.documentElement; // Stocke la balise HTML du document
   }
+
   init() {
     this.setOptions(); // Configure les options du header
-
     window.addEventListener('scroll', this.onScroll.bind(this)); // Ajoute un écouteur d'événements de défilement à la fenêtre
   }
 
@@ -66,5 +67,34 @@ export default class Header {
 
   onToggleNav() {
     this.html.classList.toggle('nav-is-active'); // Active/désactive la classe pour afficher ou masquer le menu mobile
+
+    if (this.html.classList.contains('nav-is-active')) {
+      this.addNavClickListener(); // Ajoute l'écouteur pour retirer la classe lors du prochain clic
+    } else {
+      this.removeNavClickListener(); // Supprime l'écouteur si le menu est désactivé
+    }
+  }
+
+  addNavClickListener() {
+    const navLinks = this.element.querySelectorAll('a'); // Sélectionne tous les liens du menu
+    this.navClickHandler = this.removeNavActive.bind(this); // Définit la fonction de gestion du clic
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', this.navClickHandler); // Ajoute un écouteur sur chaque lien
+    });
+  }
+
+  removeNavClickListener() {
+    const navLinks = this.element.querySelectorAll('a'); // Sélectionne tous les liens du menu
+    if (this.navClickHandler) {
+      navLinks.forEach(link => {
+        link.removeEventListener('click', this.navClickHandler); // Supprime l'écouteur de chaque lien
+      });
+    }
+  }
+
+  removeNavActive() {
+    this.html.classList.remove('nav-is-active'); // Retire la classe nav-is-active
+    this.removeNavClickListener(); // Supprime les écouteurs après le clic
   }
 }

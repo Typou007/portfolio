@@ -9,8 +9,9 @@ export default class Youtube {
     this.youtubeId = this.element.dataset.youtubeId;
 
     // Détermine si la lecture automatique est activée en fonction de la présence de 'data-action'
-    this.actionPlay = this.element.dataset.action !== undefined;
-    this.autoplay = this.actionPlay ? 1 : 0;
+    this.actionPlay = this.element.hasAttribute('data-action');
+    this.isDemo = this.element.hasAttribute('data-demo');
+    this.autoplay = this.actionPlay || this.isDemo ? 1 : 0;
 
     this.playerReady = false;
 
@@ -26,10 +27,14 @@ export default class Youtube {
 
     // Options par défaut pour la vidéo YouTube
     this.options = {
-      rel: 1, // Affiche les vidéos suggérées à la fin de la lecture
-      controls: 1, // Affiche les contrôles de lecture
-      autoplay: this.autoplay, // Lecture automatique si 'data-action' est présent
-      loop: 0, // Désactive la boucle par défaut
+      rel: this.isDemo ? 0 : 1, // Désactive les vidéos suggérées si 'data-demo' est présent
+      controls: this.isDemo ? 0 : 1, // Désactive les contrôles si 'data-demo'
+      autoplay: this.autoplay, // Lecture automatique si 'data-action' ou 'data-demo' est présent
+      loop: this.actionPlay ? 1 : 0, // Permet de jouer la vidéo en boucle
+      modestbranding: this.isDemo ? 1 : 0, // Masque le logo YouTube si 'data-demo' est présent
+      fs: this.isDemo ? 0 : 1, // Désactive le plein écran si 'data-demo'
+      disablekb: this.isDemo ? 1 : 0, // Désactive les raccourcis clavier si 'data-demo'
+      iv_load_policy: 3, // Désactive les annotations vidéo
     };
   }
 
@@ -46,17 +51,17 @@ export default class Youtube {
 
   // Initialise la vidéo YouTube et configure les options
   init() {
-    this.setOptions(); // Configure les options en fonction des attributs data
-
     this.initPlayer = this.initPlayer.bind(this);
 
-    // Si 'data-action' est présent, on lance la vidéo automatiquement
-    if (this.actionPlay) {
-      this.initPlayer(); // Démarre immédiatement si l'attribut 'data-action' est présent
+    // Si 'data-action' ou 'data-demo' est présent, on lance la vidéo automatiquement
+    if (this.actionPlay || this.isDemo) {
+      this.initPlayer(); // Démarre immédiatement si 'data-action' ou 'data-demo' est présent
     } else if (this.poster) {
       // Si un poster est présent, clique sur le poster pour lancer la vidéo
       this.element.addEventListener('click', this.initPlayer);
     }
+
+    this.setOptions(); // Configure les options en fonction des attributs data
   }
 
   // Initialise le lecteur vidéo YouTube
@@ -72,20 +77,24 @@ export default class Youtube {
       videoId: this.youtubeId, // ID de la vidéo YouTube à lire
       playerVars: {
         rel: this.options.rel, // Paramètre de suggestion de vidéos similaires
-        autoplay: 1, // Forcer la lecture automatique pour 'data-action'
+        autoplay: 1, // Forcer la lecture automatique pour 'data-action' ou 'data-demo'
         controls: this.options.controls, // Affichage des contrôles de lecture
-        mute: this.actionPlay ? 1 : 0, // Muter uniquement les vidéos avec 'data-action'
-        loop: this.options.loop, // Activer ou non la boucle
+        mute: this.actionPlay || this.isDemo ? 1 : 0, // Muter la vidéo si 'data-action' ou 'data-demo'
+        loop: this.actionPlay ? 1 : 0, // Activer la boucle uniquement pour 'data-action'
         playlist: this.youtubeId, // Nécessaire pour activer la boucle avec l'API YouTube
+        modestbranding: this.options.modestbranding, // Masquer le logo YouTube si 'data-demo'
+        fs: this.options.fs, // Désactiver le plein écran si 'data-demo'
+        disablekb: this.options.disablekb, // Désactiver les raccourcis clavier si 'data-demo'
+        iv_load_policy: this.options.iv_load_policy, // Désactiver les annotations
       },
       events: {
         onReady: () => {
           this.playerReady = true;
 
-          // Si la vidéo doit démarrer automatiquement avec 'data-action'
-          if (this.actionPlay) {
-            console.log('Lecture automatique de la vidéo avec data-action en mode muet, avec boucle activée.');
-            this.player.playVideo(); // Démarre la vidéo en sourdine
+          // Si la vidéo doit démarrer automatiquement avec 'data-action' ou 'data-demo'
+          if (this.actionPlay || this.isDemo) {
+            console.log('Lecture automatique de la vidéo avec data-action ou data-demo.');
+            this.player.playVideo(); // Démarre la vidéo
           }
 
           // Si un poster est présent et la vidéo n'est pas 'data-action'
@@ -118,22 +127,6 @@ export default class Youtube {
     }
   }
 
-  // Configure les options du lecteur vidéo en fonction des attributs data
-  setOptions() {
-    if ('noControls' in this.element.dataset) {
-      this.options.controls = 0; // Désactive les contrôles de lecture si 'data-no-controls' est présent
-    }
-    if ('noRel' in this.element.dataset) {
-      this.options.rel = 0; // Désactive les suggestions de vidéos similaires si 'data-no-rel' est présent
-    }
-    if ('loop' in this.element.dataset) {
-      this.options.loop = 1; // Active la boucle si 'data-loop' est présent
-    }
-    if ('autoplay' in this.element.dataset) {
-      this.options.autoplay = 1; // Active la lecture automatique si 'data-autoplay' est présent
-    }
-  }
-
   // Initialise toutes les instances de vidéos YouTube lorsque l'API YouTube est prête
   static initAll() {
     document.documentElement.classList.add('is-youtube-ready');
@@ -151,6 +144,32 @@ export default class Youtube {
       if (instance.playerReady && instance !== currentInstance) {
         instance.player.pauseVideo();
       }
+    }
+  }
+
+  // Configure les options du lecteur vidéo en fonction des attributs data
+  setOptions() {
+    if ('progress' in this.element.dataset) {
+      this.options.controls = 0; // Désactive les contrôles de lecture
+    }
+    if ('noRel' in this.element.dataset) {
+      this.options.rel = 0; // Désactive les suggestions de vidéos similaires
+    }
+    if ('noControls' in this.element.dataset) {
+      this.options.controls = 0; // Désactive les contrôles de lecture
+    }
+    if ('loop' in this.element.dataset) {
+      this.options.loop = 1; // Active la boucle si data-loop est présent
+
+    }
+    if ('loop' in this.element.dataset) {
+      // Si 'data-demo' est présent, force les options pour masquer tout ce qui est lié à YouTube
+      this.options.rel = 0; // Pas de vidéos suggérées
+      this.options.controls = 0; // Pas de contrôles
+      this.options.modestbranding = 1; // Masquer le logo YouTube
+      this.options.fs = 0; // Désactiver le plein écran
+      this.options.disablekb = 1; // Désactiver les raccourcis clavier
+      this.options.iv_load_policy = 3; // Pas d'annotations
     }
   }
 }

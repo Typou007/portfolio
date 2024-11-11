@@ -35,7 +35,7 @@
                 </div>
         </div>
 
-        <div class="copy"> Copyright © <?php echo Date('Y'); ?>  Antoine Breton. Tous droits réservés. Reproduction interdite sans autorisation préalable.</div>
+        <div class="copy"> Copyright © <?php echo Date('Y'); ?>  <?php wp_title('|', true, 'right') ?> | <?php bloginfo('name'); ?>. Tous droits réservés. Reproduction interdite sans autorisation préalable.</div>
 </footer>
 </body>
 </html>

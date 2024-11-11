@@ -3,9 +3,17 @@
 }
 
 .img_hero {
-    width: 100%;
-    max-height: 850px;
     position: relative;
+    width: 100%; /* La vidéo prend toute la largeur */
+    max-height: 750px; /* Limite la hauteur à 750px */
+    overflow: hidden; /* Cache tout dépassement de la vidéo */
+}
+
+.img_hero video {
+    width: 100%; /* La vidéo prend toute la largeur disponible */
+    height: auto; /* Préserve le ratio d'aspect */
+    max-height: 750px; /* Limite la hauteur de la vidéo à 750px */
+    object-fit: cover; /* S'assure que la vidéo couvre tout l'espace sans distorsion */
 }
 .contact_img {
     width: 100%;
@@ -45,9 +53,16 @@
     text-align: center; /* Center text */
     color: var(--color-secondary);
     h3{
-        font-size: 30px;
+        font-size: 34px;
     }
 
+    @media screen and (max-width: 900px) {
+        
+        h3 {
+            margin: 0;
+            font-size: 30px;
+        }
+    }
     @media screen and (max-width: 780px) {
         top: 4%;
         h3 {
@@ -67,7 +82,7 @@
         top: 5%;
         h3 {
             margin: 0;
-            font-size: 14px;
+            font-size: 13px;
         }
     }
 }

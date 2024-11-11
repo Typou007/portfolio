@@ -1,6 +1,8 @@
 .projets {
-    position: relative;
-    margin-top: 50px;
+    position: relative; /* S'assure que les enfants peuvent se positionner par rapport à ce parent */
+    height: auto; /* Ajuste en fonction du contenu */
+    min-height: 100vh; /* S'assure que le conteneur prend au moins la hauteur de la fenêtre */
+    overflow: visible; /* Permet aux éléments de dépasser si nécessaire */
 
 }
 
@@ -200,6 +202,11 @@
         align-items: flex-start;
         max-height: 100%;
         height: 100%;
+        gap: 130px;
+
+        @media screen and (max-width: 1350px) {
+            gap: 0px;
+        }
         .txt {
             width: 100%;
 

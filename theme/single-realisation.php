@@ -7,6 +7,7 @@
                     <div class="intro-text" data-scrolly="fromLeft">
                         <!-- Affichage du sous-titre -->
                         <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/svg/classic.svg" alt="">
+                        <div class="numeros"> <h3><?php the_title(); ?></h3></div>
                         <div class="intro-affiche">
                             <div class="projet-titre">
                                 <!-- Affichage du sous-titre -->
@@ -234,27 +235,27 @@
 
     
     <section class="video-sup wrapper">
-    <div class="title" data-scrolly="fromBigSmall">
-        <div class="titre-svg-container">
-            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/svg/title.svg" alt="">
+        <div class="title" data-scrolly="fromBigSmall">
+            <div class="titre-svg-container">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/svg/title.svg" alt="">
+            </div>
+            <div class="title-overlay">
+                <h2><?php the_field('resultat_titre_section'); ?></h2> <!-- Titre de la section -->
+            </div>
         </div>
-        <div class="title-overlay">
-            <h2><?php the_field('resultat_titre_section'); ?></h2> <!-- Titre de la section -->
-        </div>
-    </div>
-    <div>
-        <div class="video">
-            <div class="youtube" data-component="Youtube" data-youtube-id="<?php the_field('resultat_youtube_id'); ?>"> <!-- ID YouTube -->
-                <div class="youtube__media js-youtube">
-                    <img class="js-poster" src="<?php echo esc_url(get_field('resultat_affiche_video')['url']); ?>" alt="Affiche vidéo" /> <!-- Affiche vidéo -->
-                    <svg class="icon icon--xl">
-                        <use xlink:href="#icon-play"></use>
-                    </svg>
+        <div>
+            <div class="video">
+                <div class="youtube" data-component="Youtube" data-youtube-id="<?php the_field('resultat_youtube_id'); ?>"> <!-- ID YouTube -->
+                    <div class="youtube__media js-youtube">
+                        <img class="js-poster" src="<?php echo esc_url(get_field('resultat_affiche_video')['url']); ?>" alt="Affiche vidéo" /> <!-- Affiche vidéo -->
+                        <svg class="icon icon--xl">
+                            <use xlink:href="#icon-play"></use>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 </section>
 

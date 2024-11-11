@@ -31,8 +31,8 @@ export default class Carousel {
     // Configure le nombre de slides affichées en fonction de la largeur de l'écran
     if ('split' in this.element.dataset) {
       this.options.breakpoints = {
-        768: { slidesPerView: 2 },
-        400: { slidesPerView: 1 },
+        768: { slidesPerView: 1.4 },
+        300: { slidesPerView: 1.1 },
       };
     }
     // Active le mode autoplay avec une pause de 3 secondes entre chaque slide

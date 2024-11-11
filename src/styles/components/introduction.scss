@@ -29,7 +29,7 @@
     font-size: 14px;
 }
 @media screen and (max-width: 404px) {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 }
@@ -54,13 +54,13 @@
         height: 80%;
         justify-content: space-around;
         h2 {
-            font-size: #{typo(2px, 50px)};
+            font-size: #{typo(2px, 38px)};
 
             @media screen and (max-width: 900px) {
-                   font-size: 13px; 
+                   font-size: 25px; 
             }
-            @media screen and (max-width: 700px) {
-                font-size: #{typo(13px, 52px)};
+            @media screen and (max-width: 750px) {
+                font-size: #{typo(11px, 52px)};
          }
         }
         h1{
@@ -137,6 +137,7 @@
         position: absolute;
         top: 0;
         margin: 5px;
+        text-align: left;
         p {
             margin: 10px 0;
         }
@@ -225,6 +226,7 @@
                  }
                 ul {
                     padding-left: 10%;
+                    text-align: left;
                 }
                 li {
                     font-size: 25px;
@@ -420,6 +422,42 @@
 .images{
     img{
         object-fit: cover;
+    }
+    
+}
+
+.numeros{
+    position: absolute;
+    top: 5%;
+    color: var(--color-secondary);
+    margin: 0 10px;
+    @media screen and (max-width: 780px) {
+        top: 3%;        
+    }
+
+    @media screen and (max-width: 700px) {
+        top: 5%;
+        h3{
+            font-size: 36px;
+        }        
+    }
+    @media screen and (max-width: 600px) {
+        top: 4%;
+        h3{
+            font-size: 33px;
+        }        
+    }
+    @media screen and (max-width: 500px) {
+        top: 3%;
+        h3{
+            font-size: 27px;
+        }        
+    }
+    @media screen and (max-width: 400px) {
+        top: 3%;
+        h3{
+            font-size: 20px;
+        }        
     }
     
 }

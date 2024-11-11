@@ -31,7 +31,6 @@ titre
     color: white; /* Change color for visibility */
     font-size: 2vw; /* Responsive font size */
     text-align: center; /* Center the text */
-    pointer-events: none; /* Disable interaction with the text */
     width: 100%;
 }
 /*
@@ -77,11 +76,12 @@ présentation
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 92%;
+        width: 96%;
         height: 94%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        gap: 20px;
     }
 
     /* Titre */
@@ -89,9 +89,6 @@ présentation
         color: white;
         text-align: left;
         pointer-events: none;
-        h3{
-            font-size: 25px;
-        }
     }
 
     .presentation-titrage h3 {
@@ -105,7 +102,7 @@ présentation
         flex-grow: 1; /* Prend l'espace vertical disponible */
         margin: 10px 0;
         display: flex; /* Utilisation de flexbox */
-        align-items: center; /* Centre verticalement le paragraphe */
+       
     }
 
     .presentation-overlay p {
@@ -160,9 +157,6 @@ img
             height: 650px;
             border: 1px var(--color-primary) solid;
             object-fit: cover;
-            .youtube{
-                color: var(--color-bg-secondary);
-            }
         }
     }
 }
@@ -213,11 +207,11 @@ loisir
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    width: 90%;
+    width: 95%;
     height: 95%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 20px;
 }
 .presentation-overlay-loisir {
     text-align: left;
@@ -227,6 +221,7 @@ loisir
     color: var(--color-secondary);
     text-align: left; /* Center the text */
     pointer-events: none; /* Disable interaction with the text */
+
 }
 /*
 expertice
@@ -247,7 +242,7 @@ expertice
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    width: 90%;
+    width: 92%;
     height: 95%;
     display: flex;
     flex-direction: column;
@@ -277,14 +272,14 @@ expertice
     h3{
         margin: 0;
         @media screen and (max-width: 450px) {
-            font-size: 24px;
+            font-size: 22px;
          }
 
     }
 }
 .expertise-overlay-expert {
     position: absolute;
-    top: 60%; /* Centrer verticalement */
+    top: 55%; /* Centrer verticalement */
     left: 50%; /* Centrer horizontalement */
     transform: translate(-50%, -50%);
     color: white;
@@ -294,7 +289,7 @@ expertice
 .evaluation {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 55px;
 }
 .resulta {
     display: flex;
@@ -324,7 +319,27 @@ expertice
 /*
 responsif
 */
-
+@media screen and (max-width: 1450px) {
+    .presentation-titrage {
+    h3{
+        font-size: 35px ;      
+    }
+    } 
+}
+@media screen and (max-width: 1320px) {
+    .presentation-titrage {
+    h3{
+    font-size: 30px ;    
+    }
+}
+}
+@media screen and (max-width: 1170px) {
+    .presentation-titrage {
+    h3{
+        font-size: 27px ;      
+    }
+}
+}
 .propos-grid {
     @media screen and (max-width: 1000px) {
         display: flex;
@@ -342,12 +357,12 @@ responsif
             width: 97%;
         }
         .presentation-titrage {
+            h3{
+                font-size: 25px;
+            }
             transform: translate(0, 0);
             left: 1%;
             top: 1%;
-            h3 {
-                font-size: 23px;
-            }
             
         }
     }

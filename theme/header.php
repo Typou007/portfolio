@@ -7,7 +7,7 @@
     <title><?php wp_title('|', true, 'right') ?> | <?php bloginfo('name'); ?></title>
     
     <?php wp_head(); ?>
-    
+    <link rel="icon" type="image/x-icon" href="https://abreton.dectim.ca/Portfolio/wp-content/themes/theme/dist/assets/images/logo.png">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/dist/styles/main.css">
     <script>
         iconsPath = '<?php bloginfo('template_url') ?>/dist/';

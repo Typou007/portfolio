@@ -345,9 +345,15 @@ svg {
         top:2%;
     }
     @media screen and (max-width: 570px) {
-        font-size: 8px;
+        font-size: 10px;
         top:3%;
     }
+    @media screen and (max-width: 430px) {
+        font-size: 8px;
+        top:2%;
+    }
+
+    
     
 }
 .etage {
@@ -470,10 +476,7 @@ form
 }
 
 /* Autres ajustements spécifiques à votre design */
-.input__label_comentaire {
-    margin-top: 10px;
-    font-size: 14px;
-}
+
 
 .gform-field-label{
     color: var(--color-secondary);
