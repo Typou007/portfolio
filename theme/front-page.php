@@ -288,7 +288,7 @@ get_header(); ?>
                             </svg>
                         </div>
                     </a>
-                    <a class="arriere" href="./wp-content/themes/theme/dist/assets/pdf/cv_develloppement.pdf" download="Breton_Antoine_CV.pdf"> 
+                    <a class="arriere" href="./wp-content/themes/theme/dist/assets/pdf/Breton_Antoine_cvV4.pdf" download="Breton_Antoine_CV.pdf"> 
                         <svg xmlns="http://www.w3.org/2000/svg" width="166" height="191" viewBox="0 0 166 191" fill="none">
                             <path d="M2.2111 48.5656L82.8769 1.73446L163.543 48.5656V142.242L82.8769 189.074L2.2111 142.242V48.5656Z" fill="#B5B5B5" fill-opacity="0.6" stroke="#25113E" stroke-width="3" />
                         </svg>
