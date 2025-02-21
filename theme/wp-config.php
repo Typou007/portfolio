@@ -54,7 +54,7 @@ define( 'DB_USER', 'abreton_admin' );
 
 /** Database password */
 
-define( 'DB_PASSWORD', 'MarmottesOmnir658' );
+define( 'DB_PASSWORD', 'Soupes15' );
 
 
 
